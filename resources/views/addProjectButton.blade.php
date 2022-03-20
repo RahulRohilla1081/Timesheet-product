@@ -166,126 +166,113 @@
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
 
+            
+<div class="card-header">
+  <h3 class="card-title">Add Project</h3>
+</div>
+<!--/.card-header -->
 
-
- 
-               <form class="form-horizontal" style="font-size:15px;">
-                      <div class="card-body">
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Project Name</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Project Description</label>
-                    <div class="col-sm-10">
-                      <input  type="text" class="form-control" id="inputPassword3" placeholder="Project Description">
-                    </div>
-                  </div>
-                 <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Client Company</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Client Company">
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Estamited Budget </label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Amount spent</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Amount">
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Estimated Project Duration</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Date">
-                    </div>
-                  </div>
-
+<div class="card-body">
+  <form class="form-horizontal">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Project Name</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label  for="inputEmail3" class="col-form-label">Client Company</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Client Company">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class=" control-label">Project Description</label>
+            <textarea id="inputDescription" class="form-control" rows="5"></textarea>
+          </div>
+          <!-- /.form-group -->
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Estamited Budgte</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Estamited Duration</label>
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Amount Spent</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Started</label>
+            
+            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                  <input type="date" class="form-control" placeholder="Estimated Budget">
                   
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Starting Date</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Date" >
-                    
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ending Date</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Date">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Project Leader</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Project leader">
-                    </div>
-                  </div>
-                  <!--dropdown menu starting -->
-                  <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Employees</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword3" placeholder="Select Employees">
-                    </div>
-                  </div>
-                   <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Status</label>
-                   
-                    <div class="col-sm-10">
-                      
-                      <select name="example1_length" aria-controls="example1" class="form-control" >
-                        <option>Select.. </option>
-                        <option>Started</option>
-                         <option>On hold</option>
-                         <option>In progress</option>
-                         <option>Cancelled</option>
-                         <option>Success</option>
-                      </select>
+              </div>
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Project Leader</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Employees</label>
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Ended</label>
+            <input type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Status</label>
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+  </form>
+  <!--/.form-->
+</div>
+<!-- /.card-body-->
 
-                    </div>
-                  </div>
-             
-                <!--dropdown menu ending-->
-
-                  
-                
-                 
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="button" id="close-button" class="btn btn-info"><a href="./addProjectScreen" class="btn btn-info" role="button">Cancel</a></button>
-                  <button type="submit" class="btn btn-info default float-right "><a href="./addProjectScreen" class="btn btn-info" role="button">Create</a></button>
-                </div>
-                </form>
-
-
-
-<!--table staring-------------------------------------------->
-
-
-
-
-
-
-
-
-<!--table ending-------------------------------------------->
-
-
-                  
-
-        
-                  
-              
-              
-             
+          <div class="card-footer">
+            <div class="col-ms-6 float-right">
+              <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
+              &emsp;
+              <button type="submit" class="btn btn-success default float-right ">Create</button>
+            </div>
+          </div>            
             <!--------------------------main content ending-------------------------------------->
 
            
