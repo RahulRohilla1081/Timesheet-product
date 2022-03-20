@@ -275,7 +275,7 @@
                 </td>
                 <td>
                 <div class="col-sm-12 col-md-6">
-                <div style="float:right;" id="example1_filter" class="dataTables_filter form-inline">
+                <div id="example1_filter" class="dataTables_filter form-inline float-right">
                   <label>Search: &ensp; 
 
                     <input type="search" class="form-control" placeholder="" aria-controls="example1">&emsp;

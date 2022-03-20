@@ -195,15 +195,15 @@
                     <div class="card-header">
                   <button type="submit" class="btn btn-info default float-right ">Create</button>
                    </div>
-                 
+                
                 </div>
                     </dialog>
-                      <button  type="button" id="fill-form-button"  class="btn btn-info"><!--<i class="ion-person-add"></i>--> <a href="./addProjectButton" class="btn btn-info" role="button">Add Project</a></button>
+                  <button  onclick="window.location.href='./addProjectButton';" type="button" class="btn btn-info">Add Project</button>
                     </td>     
                     
                 </label>
                 
-                 
+
                 </div>
                 </div>
                 </td>
