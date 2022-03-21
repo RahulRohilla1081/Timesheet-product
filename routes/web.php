@@ -20,7 +20,7 @@ use App\Http\Controllers\createRoleController;
 
 
 Route::get('/', function () {
-    return view('addProjectButton');
+    return view('login');
 
 
 });

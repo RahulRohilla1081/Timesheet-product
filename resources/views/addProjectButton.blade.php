@@ -202,12 +202,12 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Estamited Budgte</label>
+            <label for="inputEmail3" class="control-label">Estimated Budget</label>
             <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
           </div>
           <!-- /.form-group -->
           <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Estamited Duration</label>
+            <label id="inputPassword3" class=" col-form-label">Estimated Duration</label>
             <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
           </div>
           <!-- /.form-group -->
@@ -220,7 +220,7 @@
           </div>
           <!-- /.form-group -->
           <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Started</label>
+            <label id="inputPassword3" class=" col-form-label">Start Date </label>
             
             <div class="input-group date" id="reservationdate" data-target-input="nearest">
                   <input type="date" class="form-control" placeholder="Estimated Budget">
@@ -248,13 +248,19 @@
         <!-- /.col -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Ended</label>
+            <label for="inputEmail3" class="control-label">End Date </label>
             <input type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
           </div>
           <!-- /.form-group -->
           <div class="form-group">
             <label id="inputPassword3" class=" col-form-label">Status</label>
-            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
+             <select name="example1_length" aria-controls="example1" class="form-control" >
+                        <option>Select Status </option>
+                         <option>On Hold</option>
+                         <option>Cancelled</option>
+                         <option>In Process</option>
+                         <option>On Hold</option>
+                      </select>
           </div>
           <!-- /.form-group -->
         </div>
