@@ -20,7 +20,7 @@ use App\Http\Controllers\createRoleController;
 
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 
 
 });
@@ -54,11 +54,19 @@ Route::get('/addProjectButton', function () {
 
 });
 
+
 Route::get("createAuthorization",[createAuthorizationController::class,'index']);
 Route::get("createScreenref",[createScreenRefController::class,'index']);
 Route::get("createRole",[createRoleController::class,'index']);
-Route::get("login",[userAuthController::class,'userLogin']);
 
 
-Route::post("user",[userAuthController::class,'userLogin']);
-Route::view("login",'loginProfile');
+
+
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('redirects','App\Http\Controllers\HomeController@index');
