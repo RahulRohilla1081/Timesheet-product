@@ -53,14 +53,20 @@ Route::get('/addProjectButton', function () {
 
 
 });
+Route::get('/addEmployee', function () {
+    return view('addEmployee');
 
+
+});
+Route::get('/viewEmployee', function () {
+    return view('viewEmployee');
+
+
+});
 
 Route::get("createAuthorization",[createAuthorizationController::class,'index']);
 Route::get("createScreenref",[createScreenRefController::class,'index']);
 Route::get("createRole",[createRoleController::class,'index']);
-
-
-
 
 
 
