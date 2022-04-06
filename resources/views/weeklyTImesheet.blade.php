@@ -28,26 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 
-
-  
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | DataTables</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <!-- Theme style -->
- 
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -207,12 +187,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Project</h1>
+            <h5 class="m-0 text-dark">Weekly Timesheet</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="createAuthorization">Home</a></li>
-              <li class="breadcrumb-item active">Add project</li>
+              <li class="breadcrumb-item">Rahul</li>
+              <li class="breadcrumb-item ">E123456789</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -225,164 +205,69 @@
 
 
 
-
-
-
- <div class="card">
- <label>
-                  <td>
-               
-                      <button  onclick="window.location.href='./addProjectButton';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create</button>
-                    </td>     
-                    
-                </label>
- 
-              
+    <form action="viewEmployee" method="POST">
+    @csrf
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                 <button  type="button" class="btn btn-info">Select Date Range</button>
+                
+              </div>
               <!-- /.card-header -->
-             
-<div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                 <thead>
-                  <tr >
-                      <th  >
-                        Project Name
-                      </th>
-                      <th >
-                          Project Description
-                      </th>
-                      <th>
-                          Client
-                      </th>
-                      <th>
-                          Project leader
-                      </th>
-                      <th >
-                          Estimated Budget
-                      </th>
-                      <th >
-                          Amount Spent
-                      </th>
-                      <th >
-                          Project Duration(Months)
-                      </th>
-                      <th >
-                          Start Date
-                      </th>
-                      <th >
-                          End Date
-                      </th>
-                      <th >
-                          overdue(Days)
-                      </th>
-                      <th  >
-                          Edit
-                      </th>
-                     
-                      <th >
-                      Status
-                      </th>
-                  </tr>
-              </thead>
-                <!--------------Table starting---------->
-        
-              <tbody> 
-
-                @foreach($collection as $item)
-              <tr>
-                      <td>
-                          <a>
-                             {{$item['project_name']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td>
-                          <a>
-                              {{$item['project_description']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td class="project_progress">
-                           <a>
-                              {{$item['client_company']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_leader']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_budget']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_amt_spend']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_duration']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['start_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['end_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['overdue']}} 
-                          </a>
-                          <br> 
-                      </td>
+              <div class="card-body">
+                <table id="myTable" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th style="text-align:center;width: 30%">Date</th>
+                    <th style="text-align:center">Time Spent</th>
+                    <th style="text-align:center">Options</th>
                     
-                      <td class="text-center">
-                         <button type="button" class="btn btn-warning">
-                         <i class="fas fa-edit" >
-                         </i>
-                         </button>
-                      </td>
-                       <td class="text-center">
-                          <span class="badge badge-success" >Activated</span>
-                      </td>
-                         <!--------------Table ending---------->
                   </tr>
-                  @endforeach
-              
-              </tbody>
-              
-              
-          </table>
-              
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center" >Monday  01/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center" >Tuesday  02/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center" >Thursday  03/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                 
+                  </tbody>
+                 
                 </table>
               </div>
-
-
+             
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-          </div>
-          </div>
 
+            
+             <div class="card-footer">
+            <div class="col-ms-6 float-bottom">
+              <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
+              &emsp;
+              &emsp;
+               <button type="button" id="close-button" class="btn btn-info">Copy last Entery</button>
+              &emsp;
+              &emsp;
+             <button type="submit" id="close-button" onclick="" class="btn btn-info">Save as template</button>
+              &emsp;
+              &emsp;
+              
+             <button type="submit" id="close-button" onclick="" class="btn btn-info">Submit</button>
+            </div>
+          </div>   
+        </form>
 
              
             <!--------------------------main content ending-------------------------------------->
@@ -513,25 +398,22 @@ DIALOG.addEventListener('cancel', function(e) {
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
+
+
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+
+  cell0.innerHTML = "<input type=\"date\" name=\"dateof\" style=\"width:100%;border:none\" />";
+  cell1.innerHTML = "<input type=\"text\" name=\"customerName\"  style=\"width:100%;border:none\"/>";
+  cell2.innerHTML = "<input type=\"text\" name=\"ProjectName\"  style=\"width:100%;border:none\"/>";
+
+}
 </script>
-
-
 
 
 </body>

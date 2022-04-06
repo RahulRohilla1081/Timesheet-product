@@ -29,25 +29,23 @@
 
 
 
-  
-   <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>AdminLTE 3 | Modals & Alerts</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
   <!-- Theme style -->
- 
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -64,10 +62,11 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="createAuthorization" class="nav-link">Home</a>
+        <a href="" class="nav-link">Home</a>
       </li>
-     
+      
     </ul>
+    
 
     <!--------------------------------- SEARCH FORM -------------------------->
     <form class="form-inline ml-3">
@@ -169,30 +168,10 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#" role="button">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-user-alt"></i>
         </a>
-           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> Profile
-           
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> register 
-          
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> Logout
-          
-          </a>
-          
-        
-        </div>
       </li>
     </ul>
   </nav>
@@ -203,188 +182,140 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Project</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="createAuthorization">Home</a></li>
-              <li class="breadcrumb-item active">Add project</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+   
     <!-- /.content-header -->
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
 
+            
+<div class="card-header">
+ <li class="nav-item d-none d-sm-inline-block">
+      <h6>Add Client</h6>
+      </li>
+       <li class="nav-item d-none d-sm-inline-block">
+        <a href="/viewClient" class="nav-link">View Client</a>
+      </li>
+</div>
 
+<!--/.card-header -->
 
-
-
-
-
- <div class="card">
- <label>
-                  <td>
-               
-                      <button  onclick="window.location.href='./addProjectButton';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create</button>
-                    </td>     
-                    
-                </label>
- 
-              
-              <!-- /.card-header -->
-             
 <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                 <thead>
-                  <tr >
-                      <th  >
-                        Project Name
-                      </th>
-                      <th >
-                          Project Description
-                      </th>
-                      <th>
-                          Client
-                      </th>
-                      <th>
-                          Project leader
-                      </th>
-                      <th >
-                          Estimated Budget
-                      </th>
-                      <th >
-                          Amount Spent
-                      </th>
-                      <th >
-                          Project Duration(Months)
-                      </th>
-                      <th >
-                          Start Date
-                      </th>
-                      <th >
-                          End Date
-                      </th>
-                      <th >
-                          overdue(Days)
-                      </th>
-                      <th  >
-                          Edit
-                      </th>
-                     
-                      <th >
-                      Status
-                      </th>
-                  </tr>
-              </thead>
-                <!--------------Table starting---------->
-        
-              <tbody> 
+  <form class="form-horizontal">
+  
+  
+      <div class="row">
+        <div class="col-md-6">
+         
+          
+          <!-- /.form-group -->
+           
+          <div class="form-group">
+          <div class="card-header">
+            <label  for="inputEmail3" class="col-form-label">Basic Details</label>
+            
+          </div>
+         
+          </div>
+          
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+       
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row"> <! row 1-->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Customer Full Name </label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Customer Full Name">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Start Month</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Start Month">
+          </div>
 
-                @foreach($collection as $item)
-              <tr>
-                      <td>
-                          <a>
-                             {{$item['project_name']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td>
-                          <a>
-                              {{$item['project_description']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td class="project_progress">
-                           <a>
-                              {{$item['client_company']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_leader']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_budget']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_amt_spend']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_duration']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['start_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['end_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['overdue']}} 
-                          </a>
-                          <br> 
-                      </td>
-                    
-                      <td class="text-center">
-                         <button type="button" class="btn btn-warning">
-                         <i class="fas fa-edit" >
-                         </i>
-                         </button>
-                      </td>
-                       <td class="text-center">
-                          <span class="badge badge-success" >Activated</span>
-                      </td>
-                         <!--------------Table ending---------->
-                  </tr>
-                  @endforeach
-              
-              </tbody>
-              
-              
-          </table>
-              
-                </table>
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Location </label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Location">
+          </div>
+          
+          <!-- /.form-group -->
+          <div class="form-group">
+          <div class="card-header">
+            <label id="inputPassword3" class=" col-form-label">Manager Details</label>
+           
+           
+          </div>
+          </div>
+          
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Customer Email</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Customer Email">
+          </div>
+ <div class="form-group">
+            <label for="inputEmail3" class="control-label">Start Year</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Start Year">
+          </div>
+          
+           
+          
+          <!-- /.form-group -->
+        
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Reporting Manager</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Search..">
+          </div>
+          <!-- /.form-group -->
+         
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">RM Email</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="RM Email">
+          </div>
+          <!-- /.form-group -->
+        
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+  </form>
+  <!--/.form-->
+</div>
+<!-- /.card-body-->
+
+          <div class="card-footer">
+            <div class="col-ms-6 float-right">
+              <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
+              &emsp;
+             <button type="button" class="btn btn-success swalDefaultSuccess">
+                  Add Employee
+                </button>
+            </div>
+          </div> 
+
+          <div class=""wrapper>
+   <div class="card-body">
+               
+              </div>
               </div>
 
 
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          </div>
-
-
-             
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -409,13 +340,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Samishti Infotech private Ltd. <a href="http://adminlte.io">All rights reserved</a></strong>
-    <!-- All rights reserved.-->
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.1
-    </div>
-  </footer>
+  
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -503,34 +428,38 @@ DIALOG.addEventListener('cancel', function(e) {
 
 
 
-<!-- DataTables -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../../plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 
+<script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: 'Client Added successfully'
+      })
+    });
+    
+  });
+
+</script>
 
 
 

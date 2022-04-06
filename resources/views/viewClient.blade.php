@@ -29,7 +29,7 @@
 
 
 
-  
+
    <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 3 | DataTables</title>
@@ -47,7 +47,6 @@
  
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -66,8 +65,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="createAuthorization" class="nav-link">Home</a>
       </li>
-     
+      
     </ul>
+    
 
     <!--------------------------------- SEARCH FORM -------------------------->
     <form class="form-inline ml-3">
@@ -169,30 +169,10 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#" role="button">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-user-alt"></i>
         </a>
-           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> Profile
-           
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> register 
-          
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> Logout
-          
-          </a>
-          
-        
-        </div>
       </li>
     </ul>
   </nav>
@@ -203,180 +183,61 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Project</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="createAuthorization">Home</a></li>
-              <li class="breadcrumb-item active">Add project</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+   
     <!-- /.content-header -->
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
 
+            
+<div class="card-header">
+ <li class="nav-item d-none d-sm-inline-block">
+   <a href="/addClient" class="nav-link">Add Client</a>
+      </li>
+       <li class="nav-item d-none d-sm-inline-block">
+       <h6>View Clients</h6>
+      </li>
+</div>
 
-
-
+<!--/.card-header -->
+                        
+                        <!-- main Contentstarted-->
 
 
 
  <div class="card">
- <label>
-                  <td>
-               
-                      <button  onclick="window.location.href='./addProjectButton';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create</button>
-                    </td>     
-                    
-                </label>
  
               
               <!-- /.card-header -->
-             
-<div class="card-body">
+              <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                 <thead>
-                  <tr >
-                      <th  >
-                        Project Name
-                      </th>
-                      <th >
-                          Project Description
-                      </th>
-                      <th>
-                          Client
-                      </th>
-                      <th>
-                          Project leader
-                      </th>
-                      <th >
-                          Estimated Budget
-                      </th>
-                      <th >
-                          Amount Spent
-                      </th>
-                      <th >
-                          Project Duration(Months)
-                      </th>
-                      <th >
-                          Start Date
-                      </th>
-                      <th >
-                          End Date
-                      </th>
-                      <th >
-                          overdue(Days)
-                      </th>
-                      <th  >
-                          Edit
-                      </th>
-                     
-                      <th >
-                      Status
-                      </th>
+                  <thead>
+                  <tr>
+                    <th style="width: 5%" >S.No</th>
+                    <th style="width: 30%">Client Full Name</th>
+                    <th style="width: 10%">Client Email</th>
+                    <th style="width: 30%">Projects Details</th>
+                    <th style="width: 20%">Location </th>
+                    <th style="width: 10%">Reporting Manager </th>
+                    <th style="width: 20%">RM Email</th>
                   </tr>
-              </thead>
-                <!--------------Table starting---------->
-        
-              <tbody> 
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1.</td>
+                    <td>Samishti Infotech Pvt. Ltd.
+                   
+                    </td>
+                    <td>samishtiinfotech@gmail.com</td>
+                    <td>Timesheet</td>
+                    <td> Pune,India</td>
+                    <td>Akhil Garg</td>
+                    <td>akhilgarg@gmail.com</td>
+                  </tr>
+                  </tbody>
+               
 
-                @foreach($collection as $item)
-              <tr>
-                      <td>
-                          <a>
-                             {{$item['project_name']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td>
-                          <a>
-                              {{$item['project_description']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td class="project_progress">
-                           <a>
-                              {{$item['client_company']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_leader']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_budget']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_amt_spend']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_duration']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['start_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['end_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['overdue']}} 
-                          </a>
-                          <br> 
-                      </td>
-                    
-                      <td class="text-center">
-                         <button type="button" class="btn btn-warning">
-                         <i class="fas fa-edit" >
-                         </i>
-                         </button>
-                      </td>
-                       <td class="text-center">
-                          <span class="badge badge-success" >Activated</span>
-                      </td>
-                         <!--------------Table ending---------->
-                  </tr>
-                  @endforeach
-              
-              </tbody>
-              
-              
-          </table>
-              
                 </table>
               </div>
-
-
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -384,7 +245,12 @@
           </div>
 
 
-             
+
+
+
+
+
+
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -409,13 +275,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Samishti Infotech private Ltd. <a href="http://adminlte.io">All rights reserved</a></strong>
-    <!-- All rights reserved.-->
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.1
-    </div>
-  </footer>
+  
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -501,7 +361,9 @@ DIALOG.addEventListener('cancel', function(e) {
 </script>
 
 
+<!-- jQuery -->
 
+<!-- Bootstrap 4 -->
 
 <!-- DataTables -->
 <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
@@ -509,7 +371,7 @@ DIALOG.addEventListener('cancel', function(e) {
 <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-
+<script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
@@ -521,7 +383,7 @@ DIALOG.addEventListener('cancel', function(e) {
     });
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": true,
       "ordering": true,
       "info": true,
@@ -530,8 +392,6 @@ DIALOG.addEventListener('cancel', function(e) {
     });
   });
 </script>
-
-
 
 
 </body>

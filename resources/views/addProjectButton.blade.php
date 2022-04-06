@@ -26,6 +26,31 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+<!-- table fix data-->
+  <style>
+	.fixTableHead {
+	overflow-y: auto;
+	height: 110px;
+	}
+	.fixTableHead thead th {
+	position: sticky;
+	top: 0;
+	}
+	table {
+	border-collapse: collapse;		
+	width: 100%;
+	}
+	th,
+	td {
+	padding: 8px 15px;
+	border: 2px solid #529432;
+	}
+	th {
+	background: #ABDD93;
+	}
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -42,7 +67,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="createAuthorization" class="nav-link">Home</a>
       </li>
      
     </ul>
@@ -182,7 +207,7 @@
           </div>
           <!-- /.form-group -->
           <div class="form-group">
-            <label  for="inputEmail3" class="col-form-label">Client Company</label>
+            <label  for="inputEmail3" class="col-form-label">Client</label>
             <input type="text" class="form-control" id="inputEmail3" placeholder="Client Company">
           </div>
           <!-- /.form-group -->

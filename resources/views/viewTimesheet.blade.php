@@ -30,24 +30,6 @@
 
 
   
-   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | DataTables</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <!-- Theme style -->
- 
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -207,13 +189,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Project</h1>
+            <h5 class="m-0 text-dark">View Timesheet</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="createAuthorization">Home</a></li>
-              <li class="breadcrumb-item active">Add project</li>
+             <li class="breadcrumb-item ">Rahul</li>
+              <li class="breadcrumb-item ">E123456789</li>
             </ol>
+            
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -226,165 +209,52 @@
 
 
 
-
-
- <div class="card">
- <label>
-                  <td>
-               
-                      <button  onclick="window.location.href='./addProjectButton';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create</button>
-                    </td>     
-                    
-                </label>
- 
-              
+    <form action="viewEmployee" method="POST">
+    @csrf
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h5> Wednesday <br>01/04/20202</h5>
+                
+              </div>
               <!-- /.card-header -->
-             
-<div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                 <thead>
-                  <tr >
-                      <th  >
-                        Project Name
-                      </th>
-                      <th >
-                          Project Description
-                      </th>
-                      <th>
-                          Client
-                      </th>
-                      <th>
-                          Project leader
-                      </th>
-                      <th >
-                          Estimated Budget
-                      </th>
-                      <th >
-                          Amount Spent
-                      </th>
-                      <th >
-                          Project Duration(Months)
-                      </th>
-                      <th >
-                          Start Date
-                      </th>
-                      <th >
-                          End Date
-                      </th>
-                      <th >
-                          overdue(Days)
-                      </th>
-                      <th  >
-                          Edit
-                      </th>
-                     
-                      <th >
-                      Status
-                      </th>
+              <div class="card-body">
+                <table id="myTable" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th style="width: 10%">Date</th>
+                    <th style="width: 20%">Customer Name</th>
+                    <th style="width: 20%">Project Name</th>
+                    <th style="width: 20%">Phase</th>
+                    <th style="width: 20%">Activity</th>
+                    <th style="width: 20%">Description</th>
+                    <th style="width: 20%">Hours </th>
                   </tr>
-              </thead>
-                <!--------------Table starting---------->
-        
-              <tbody> 
-
-                @foreach($collection as $item)
-              <tr>
-                      <td>
-                          <a>
-                             {{$item['project_name']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td>
-                          <a>
-                              {{$item['project_description']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
-                      <td class="project_progress">
-                           <a>
-                              {{$item['client_company']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_leader']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_budget']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['est_amt_spend']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['project_duration']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['start_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['end_date']}} 
-                          </a>
-                          <br> 
-                      </td>
-                        <td class="project_progress">
-                           <a>
-                              {{$item['overdue']}} 
-                          </a>
-                          <br> 
-                      </td>
-                    
-                      <td class="text-center">
-                         <button type="button" class="btn btn-warning">
-                         <i class="fas fa-edit" >
-                         </i>
-                         </button>
-                      </td>
-                       <td class="text-center">
-                          <span class="badge badge-success" >Activated</span>
-                      </td>
-                         <!--------------Table ending---------->
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>01/04/2022</td>
+                    <td>Rahul</td>
+                    <td>Timesheet</td>
+                    <td>Training</td>
+                    <td >Development</td>
+                    <td> dailyTimesheet Screen</td>
+                    <td> 8 Hrs</td>
                   </tr>
-                  @endforeach
-              
-              </tbody>
-              
-              
-          </table>
-              
+                 
+                  </tbody>
+                 
                 </table>
               </div>
-
-
+             
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-          </div>
-          </div>
 
-
-             
+            
+            
+        </form>             
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -513,23 +383,7 @@ DIALOG.addEventListener('cancel', function(e) {
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
 
 
 

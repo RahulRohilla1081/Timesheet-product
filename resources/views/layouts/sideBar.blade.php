@@ -8,7 +8,7 @@
 <!------------------------ Main Sidebar Container ------------------------->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="createAuthorization" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Timesheet Project</span>
@@ -24,7 +24,7 @@
         <div class="info">
           <a href="#" class="d-block">Timesheet</a>
         </div>
-      </div> -->
+      </div> 
 <!---------------------------------- SideMenu Start--------------------------------------------------------------------->
       <!-- Sidebar Menu -->
      <nav class="mt-2">
@@ -105,13 +105,42 @@
               <li class="nav-item">
                 <a href="./addEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add project</p>
+                  <p>Add Employee</p>
                 </a>
               </li>
         </ul>
         </ul>
       </nav>
 <!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+             <i class="fas fa-address-card"></i>
+              <p>
+                 Client
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addClient" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Client</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add client ending-->
+
 
    
 <!-- add project--------->
@@ -140,10 +169,40 @@
       </nav>
 <!--- add project ending-->
 
-     
 
+<!-- dailyTimesheet starting-->
 
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Timesheet
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/dailyTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily TImesheet</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/weeklyTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Weekly Timesheet  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
 
+<!-- dailyTimesheet Ending-->
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

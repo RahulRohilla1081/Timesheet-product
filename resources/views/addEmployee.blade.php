@@ -26,6 +26,26 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Modals & Alerts</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 @extends('layouts.sideBar')
@@ -42,12 +62,9 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="" class="nav-link">Home</a>
       </li>
-       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">View Employees</a>
-      </li>
-     
+      
     </ul>
     
 
@@ -185,10 +202,14 @@
 <div class="card-body">
   <form class="form-horizontal">
    <div class="form-group form-inline">
-            <label for="inputEmail3" class="control-label">Employee ID  &ensp; </label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Employee ID"> &ensp; 
-             <button  onclick="window.location.href='./addProjectButton';" type="button" class="btn btn-info"> Edit</button>
-          </div>
+            <label for="inputEmail3" class="control-label">Employee ID :  &ensp; </label>
+            <text>E1234567890</text>
+             <li class="nav-item d-none d-sm-inline-block">
+        <a href="/viewEmployee" class="nav-link">Edit</a>
+      </li>
+            
+           <!--  <button  onclick="window.location.href='./addProjectButton';" type="button" class="btn btn-info"> Edit</button> -->
+           </div>
   
       <div class="row">
         <div class="col-md-6">
@@ -219,8 +240,14 @@
           </div>
           <div class="form-group">
             <label for="inputEmail3" class="control-label">Last Name </label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="First Name">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Last Name">
           </div>
+
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Address </label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Address">
+          </div>
+          
           <!-- /.form-group -->
           <div class="form-group">
           <div class="card-header">
@@ -238,6 +265,15 @@
             <label for="inputEmail3" class="control-label">Middle Name</label>
             <input type="text" class="form-control" id="inputEmail3" placeholder="Last  Name">
           </div>
+ <div class="form-group">
+            <label for="inputEmail3" class="control-label">Email</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+          
+           <div class="form-group">
+            <label for="inputEmail3" class="control-label">Contact Number </label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Contact Number">
+          </div>
           
           <!-- /.form-group -->
         
@@ -249,8 +285,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Manager Name</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+            <label for="inputEmail3" class="control-label">Reporting Manager</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Search..">
           </div>
           <!-- /.form-group -->
          
@@ -259,8 +295,8 @@
         <!-- /.col -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Manager Email</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Manager Email">
+            <label for="inputEmail3" class="control-label">RM Email</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="RM Email">
           </div>
           <!-- /.form-group -->
         
@@ -278,9 +314,19 @@
             <div class="col-ms-6 float-right">
               <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
               &emsp;
-              <button type="submit" class="btn btn-success default float-right ">Add Employee</button>
+             <button type="button" class="btn btn-success swalDefaultSuccess">
+                  Add Employee
+                </button>
             </div>
-          </div>            
+          </div> 
+
+          <div class=""wrapper>
+   <div class="card-body">
+               
+              </div>
+              </div>
+
+
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -389,6 +435,43 @@ DIALOG.addEventListener('cancel', function(e) {
 });
 
 </script>
+
+
+
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../../plugins/toastr/toastr.min.js"></script>
+<!-- AdminLTE App -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+
+    $('.swalDefaultSuccess').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: 'Employee Added successfully'
+      })
+    });
+    
+  });
+
+</script>
+
 
 
 </body>
