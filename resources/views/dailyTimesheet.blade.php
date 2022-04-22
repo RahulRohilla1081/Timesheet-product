@@ -30,7 +30,7 @@
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-@extends('layouts.sideBar')
+
 
 
 
@@ -177,6 +177,208 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+  <!------------------------ Main Sidebar Container ------------------------->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="createAuthorization" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Timesheet Project</span>
+    </a>
+
+    <!------------------------- Sidebar ------------------------------>
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+     <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Timesheet</a>
+        </div>
+      </div> 
+<!---------------------------------- SideMenu Start--------------------------------------------------------------------->
+      <!-- Sidebar Menu -->
+     <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Authorization
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createAuthorization" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Authorization</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createScreenref" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Screen Reference  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+
+
+<!---------------create role----------------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fas fa-user-tag"></i>
+              <p>
+                 Role
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./createRole" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Role</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+
+      <!------------create role end------------->
+
+         
+<!-- add Employee starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="ion-person-add"></i>  
+              <p>
+                 Employees
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addEmployee" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Employee</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+             <i class="fas fa-address-card"></i>
+              <p>
+                 Client
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addClient" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Client</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add client ending-->
+
+
+   
+<!-- add project--------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fa fa-tasks"></i>  
+              <p>
+                 Project
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addProjectScreen" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add project</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add project ending-->
+
+
+<!-- dailyTimesheet starting-->
+
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Timesheet
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/dailyTimesheet" class="nav-link active  ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily TImesheet</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/viewTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Timesheet  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+<!-- dailyTimesheet Ending-->
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
+    <!-- /.sidebar -->
 </div>
 
 
@@ -203,16 +405,12 @@
   <!-- Main content Staring  -->
 
    
-    <form action="viewEmployee" method="POST">
-    @csrf
+   
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                 <button  type="button" class="btn btn-info">Calendar</button>
-                
-              </div>
+             
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="myTable" class="table table-bordered table-hover">
@@ -229,7 +427,7 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td>01/04/2022</td>
+                    <td>Sun Apr 10 2022</td>
                     <td>Rahul</td>
                     <td>Timesheet</td>
                     <td>Training</td>
@@ -245,19 +443,29 @@
              
               <!-- /.card-body -->
             </div>
-
-            
-             <div class="card-footer">
+             <form action="{{route('viewTimesheet.store')}}"  id="timesheet" method="POST"  class="form-horizontal">
+  @csrf
+<input type="hidden"  name="DATE" type="text" class="form-control" id="input1" placeholder="Contact Number">
+<input type="hidden" name="CUSTOMER_NAME" type="text" class="form-control" id="input2" placeholder="Contact Number">
+<input type="hidden"  name="PROJECT_NAME" type="text" class="form-control" id="input3" placeholder="Contact Number">
+<input  type="hidden" name="PHASE" type="text" class="form-control" id="input4" placeholder="Contact Number">
+<input type="hidden"  name="ACTIVITY" type="text" class="form-control" id="input5" placeholder="Contact Number">
+<input type="hidden" name="DESCRIPTION" type="text" class="form-control" id="input6" placeholder="Contact Number">
+<input  type="hidden"  name="HOURS" type="text" class="form-control" id="input7" placeholder="Contact Number">
+  <div class="card-footer">
             <div class="col-ms-6 float-bottom">
               <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
               &emsp;
               &emsp;
-               <button type="button" id="close-button" class="btn btn-info">Copy last Entery</button>
+               <button type="button" id="close-button" class="btn btn-info">Save</button>
               &emsp;
               &emsp;
-             <button type="submit" id="close-button" onclick="" class="btn btn-info">Save as template</button>
+             <button type="submit" id="close-button"  class="btn btn-info">Submit</button>
             </div>
-          </div>   
+          </div>  
+
+          
+            
         </form>
     
 
@@ -404,13 +612,49 @@ function myFunction() {
   var cell4 = row.insertCell(4);
   var cell5 = row.insertCell(5);
   var cell6 = row.insertCell(6);
-  cell0.innerHTML = "<input type=\"date\" name=\"dateof\" style=\"width:100%;border:none\" />";
-  cell1.innerHTML = "<input type=\"text\" name=\"customerName\"  style=\"width:100%;border:none\"/>";
-  cell2.innerHTML = "<input type=\"text\" name=\"ProjectName\"  style=\"width:100%;border:none\"/>";
-  cell3.innerHTML = "<input type=\"text\" name=\"Phase\"  style=\"width:100%;border:none\"/>";
-  cell4.innerHTML = "<input type=\"text\" name=\"Activity\"  style=\"width:100%;border:none\"/>";
-  cell5.innerHTML = "<input type=\"text\" name=\"Description\"  style=\"width:100%;border:none\"/>";
-  cell6.innerHTML = "<input type=\"text\" name=\"hour\"  style=\"width:100%;border:none\"/>";
+  var cell7 = row.insertCell(7);
+  cell0.innerHTML = "<input type=\"date\" name=\"date\" id=\"date\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
+  cell1.innerHTML = "<select type=\"text\" name=\"customerName\" id=\"customerName\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>><option>Select Customer</option> @foreach($client as $item)<option> {{$item['CUSTOMER_FULL_NAME']}} </option>@endforeach</select> ";
+  cell2.innerHTML = "<select type=\"text\" name=\"projectName\" id=\"projectName\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Project</option> @foreach($project as $item)<option> {{$item['PROJECT_NAME']}} </option>@endforeach</select> ";
+  cell3.innerHTML = "<select type=\"text\" name=\"phase\"  id=\"phase\" onChange=\"getEmail()\"style=\"width:100%;border:none\"/>><option>Select Phase</option><option> Project Preparation</option><option>Business Blueprint</option><option>Realization</option><option>Final Preparation</option><option>Go-Live</option><option>Hypercare Support</option><option>Training</option><option>Design</option><option>Discover</option><option>Landscape Transformation</option><option>Support</option><option>Organizational Activities</option><option>No Work</option></select> ";
+  cell4.innerHTML = "<select type=\"text\" name=\"activity\"  id=\"activity\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Activity</option><option>Meeting</option><option>Development</option><option>Testing</option><option>Go-Live</option><option>Service Request</option><option>Incident</option><option>Change Request</option><option>Customer Visit</option><option>Training</option><option>Project Training</option><option>Absent</option></select> ";
+  cell5.innerHTML = "<input type=\"text\" name=\"Description\" id=\"Description\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
+  cell6.innerHTML = "<input type=\"text\" name=\"hour\"  id=\"hour\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>";
+  cell7.innerHTML = "<button type=\"submit\" name=\"edit\"  style=\"width:100%;border:none\">Edit</button";
+
+
+
+
+}
+</script>
+
+
+<script>
+function getEmail(){
+  
+      var a=document.getElementById("date").value;
+  document.getElementById("input1").value=a;
+
+  var b=document.getElementById("customerName").value;
+  document.getElementById("input2").value=b;
+  
+  var c=document.getElementById("projectName").value;
+  document.getElementById("input3").value=c;
+
+  var d=document.getElementById("phase").value;
+  document.getElementById("input4").value=d;
+
+  var e=document.getElementById("activity").value;
+  document.getElementById("input5").value=e;
+
+  var f=document.getElementById("Description").value;
+  document.getElementById("input6").value=f;
+
+  var g=document.getElementById("hour").value;
+  document.getElementById("input7").value=g;
+  
+
+
 }
 </script>
 

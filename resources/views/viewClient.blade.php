@@ -49,7 +49,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-@extends('layouts.sideBar')
+
 
 
 
@@ -177,6 +177,208 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+  <!------------------------ Main Sidebar Container ------------------------->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="createAuthorization" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Timesheet Project</span>
+    </a>
+
+    <!------------------------- Sidebar ------------------------------>
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+     <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Timesheet</a>
+        </div>
+      </div> 
+<!---------------------------------- SideMenu Start--------------------------------------------------------------------->
+      <!-- Sidebar Menu -->
+     <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Authorization
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createAuthorization" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Authorization</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createScreenref" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Screen Reference  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+
+
+<!---------------create role----------------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fas fa-user-tag"></i>
+              <p>
+                 Role
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./createRole" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Role</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+
+      <!------------create role end------------->
+
+         
+<!-- add Employee starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="ion-person-add"></i>  
+              <p>
+                 Employees
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addEmployee" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Employee</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="./createRole" class="nav-link ">
+             <i class="fas fa-address-card"></i>
+              <p>
+                 Client
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addClient" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Client</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add client ending-->
+
+
+   
+<!-- add project--------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fa fa-tasks"></i>  
+              <p>
+                 Project
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addProjectScreen" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add project</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add project ending-->
+
+
+<!-- dailyTimesheet starting-->
+
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Timesheet
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/dailyTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily TImesheet</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/viewTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Timesheet  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+<!-- dailyTimesheet Ending-->
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
+    <!-- /.sidebar -->
 </div>
 
 
@@ -212,26 +414,91 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th style="width: 5%" >S.No</th>
-                    <th style="width: 30%">Client Full Name</th>
-                    <th style="width: 10%">Client Email</th>
-                    <th style="width: 30%">Projects Details</th>
+                    <th style="width: 5%" >Customer Short Name </th>
+                    <th style="width: 5%" >Customer code </th>
+                    <th style="width: 5%" >Start Month </th>
+                    <th style="width: 5%" >Start Year </th>
+                    <th style="width: 30%">Customer Full Name</th>
+                    <th style="width: 10%">Customer Email</th>
                     <th style="width: 20%">Location </th>
-                    <th style="width: 10%">Reporting Manager </th>
+                    <th style="width: 10%">Reporting Manager</th>
                     <th style="width: 20%">RM Email</th>
+                   
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1.</td>
-                    <td>Samishti Infotech Pvt. Ltd.
+                @foreach($collection as $item)
+              <tr>
+                      <td>
+                          <a>
+                             {{$item['CUSTOMER_SHORT_NAME']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td>
+                          <a>
+                              {{$item['CUSTOMER_CODE']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['START_MONTH']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['START_YEAR']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['CUSTOMER_FULL_NAME']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['CUSTOMER_EMAIL_ID']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['CUSTOMER_LOCATION']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['REPORTING_MANAGER']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['REPORTING_MANAGER_EMAIL_ID']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                    
+                     
+                         <!--------------Table ending---------->
+                  </tr>
+                  @endforeach
                    
-                    </td>
-                    <td>samishtiinfotech@gmail.com</td>
-                    <td>Timesheet</td>
-                    <td> Pune,India</td>
-                    <td>Akhil Garg</td>
-                    <td>akhilgarg@gmail.com</td>
+                   
                   </tr>
                   </tbody>
                
@@ -371,9 +638,9 @@ DIALOG.addEventListener('cancel', function(e) {
 <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
 <!-- page script -->
 <script>
   $(function () {
@@ -387,7 +654,7 @@ DIALOG.addEventListener('cancel', function(e) {
       "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": false,
+      "autoWidth": true,
       "responsive": true,
     });
   });

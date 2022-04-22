@@ -28,11 +28,31 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 
+  
+
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | DataTables</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+ 
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
 
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-@extends('layouts.sideBar')
 
 
 
@@ -179,6 +199,207 @@
     </ul>
   </nav>
   <!-- /.navbar -->
+  <!------------------------ Main Sidebar Container ------------------------->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="createAuthorization" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Timesheet Project</span>
+    </a>
+
+    <!------------------------- Sidebar ------------------------------>
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+     <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Timesheet</a>
+        </div>
+      </div> 
+<!---------------------------------- SideMenu Start--------------------------------------------------------------------->
+      <!-- Sidebar Menu -->
+     <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Authorization
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createAuthorization" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Authorization</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/createScreenref" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Screen Reference  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+
+
+<!---------------create role----------------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fas fa-user-tag"></i>
+              <p>
+                 Role
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./createRole" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create Role</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+
+      <!------------create role end------------->
+
+         
+<!-- add Employee starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="ion-person-add"></i>  
+              <p>
+                 Employees
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addEmployee" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Employee</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+             <i class="fas fa-address-card"></i>
+              <p>
+                 Client
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addClient" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add Client</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add client ending-->
+
+
+   
+<!-- add project--------->
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview ">
+            <a href="./createRole" class="nav-link ">
+              <i class="fa fa-tasks"></i>  
+              <p>
+                 Project
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./addProjectScreen" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>  
+                  <p>Add project</p>
+                </a>
+              </li>
+        </ul>
+        </ul>
+      </nav>
+<!--- add project ending-->
+
+
+<!-- dailyTimesheet starting-->
+
+<nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                Timesheet
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview menu-open">
+              <li class="nav-item">
+                <a href="/dailyTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily TImesheet</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/viewTimesheet" class="nav-link active ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Timesheet  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+<!-- dailyTimesheet Ending-->
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
 </div>
 
 
@@ -204,7 +425,7 @@
     <!-- /.content-header -->
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
-
+ 
 
 
 
@@ -212,16 +433,50 @@
     <form action="viewEmployee" method="POST">
     @csrf
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
+    
             <div class="card">
-              <div class="card-header">
-                <h5> Wednesday <br>01/04/20202</h5>
+                <div class="card-body">
+              <!-- Employee Picker range -->
+            <div class="form-group ">   
+          <div class="row ">
+          <div class="col-3 ">
+                   <!-- range picker -->
+                  <div class="form-group ">
+                  <div class="input-group">
+                    <button type="button" class="btn btn-default " id="daterange-btn">
+                      <i class="far fa-calendar-alt"></i> Date range picker
+                      <i class="fas fa-caret-down"></i>
+                    </button>
+                  </div>
+                </div>
+                     <!-- range picker -->
+                 
+                </div> <!-- end col 3-->
+             <div class="col-3 ">
+             </div>
+             <div class="col-3 ">
+             </div>
+             <div class="col-3 ">
+                   <!-- Employee Picker -->
+              <div class="input-group  ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                     <select name="SCREEN_ID"  aria-controls="example1" class="form-control " >
+                          @foreach($employee as $item)
+                        <option value ="">{{$item['EMPLOYEE_NAME']}}  </option> 
+                         @endforeach 
+                      </select> 
+                  </div>
+                </div>
+                 <!-- Employee Picker -->
+                </div>
                 
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="myTable" class="table table-bordered table-hover">
+                
+            
+                <table id="myTable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th style="width: 10%">Date</th>
@@ -233,24 +488,70 @@
                     <th style="width: 20%">Hours </th>
                   </tr>
                   </thead>
-                  <tbody>
-                  <tr>
-                    <td>01/04/2022</td>
-                    <td>Rahul</td>
-                    <td>Timesheet</td>
-                    <td>Training</td>
-                    <td >Development</td>
-                    <td> dailyTimesheet Screen</td>
-                    <td> 8 Hrs</td>
+                  <tbody> 
+              @foreach($timesheet as $item)
+              <tr>
+                      <td>
+                          <a>
+                             {{$item['DATE']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td>
+                          <a>
+                              {{$item['CUSTOMER_NAME']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['PROJECT_NAME']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['PHASE']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['ACTIVITY']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['DESCRIPTION']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['HOURS']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                   
+                         <!--------------Table ending---------->
                   </tr>
-                 
-                  </tbody>
+                  @endforeach
+              </tbody>
                  
                 </table>
-              </div>
-             
-              <!-- /.card-body -->
-            </div>
+                </div>
+                </div>
+                </div>
+                </div>
+          
 
             
             
@@ -261,7 +562,7 @@
                
                   
                 <!-- /. tools -->
-              </div>
+            
               <!-- /.card-header -->
               <div class="card-body pt-0">
                 <!--The calendar -->
@@ -381,8 +682,71 @@ DIALOG.addEventListener('cancel', function(e) {
 <!-- AdminLTE App -->
 
 <!-- AdminLTE for demo purposes -->
+<!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+    });
+  });
+</script>
+
+
+
+
+<!-- date-range-picker -->
+<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+
+<!-- page script -->
+<script>
+  $(function () {
+
+   
+
+   
+
+    
+   
+    $('#reservation').daterangepicker()
+   
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+         
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+         
+          'This week': [moment().subtract(29, 'days'), moment()],
+          'Last week' : [moment().subtract(6, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+         
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+  
+    
+   
+
+  })
+</script>
 
 
 

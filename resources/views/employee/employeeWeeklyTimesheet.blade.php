@@ -28,32 +28,9 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 
-<!-- table fix data-->
-  <style>
-	.fixTableHead {
-	overflow-y: auto;
-	height: 110px;
-	}
-	.fixTableHead thead th {
-	position: sticky;
-	top: 0;
-	}
-	table {
-	border-collapse: collapse;		
-	width: 100%;
-	}
-	th,
-	td {
-	padding: 8px 15px;
-	border: 2px solid #529432;
-	}
-	th {
-	background: #ABDD93;
-	}
-</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-@extends('layouts.sideBar')
+
 
 
 
@@ -172,138 +149,214 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button">
           <i class="fas fa-user-alt"></i>
         </a>
+           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> Profile
+           
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> register 
+          
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> Logout
+          
+          </a>
+          
+        
+        </div>
       </li>
     </ul>
   </nav>
   <!-- /.navbar -->
+  
+<!------------------------ Main Sidebar Container ------------------------->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="createAuthorization" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Timesheet Project</span>
+    </a>
+
+    <!------------------------- Sidebar ------------------------------>
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+     <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Timesheet</a>
+        </div>
+      </div> 
+<!---------------------------------- SideMenu Start--------------------------------------------------------------------->
+      <!-- Sidebar Menu -->
+     <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-user-lock"></i>
+              <p>
+                TImesheet
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/employeeDailyTimesheet" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daily TImesheet</p>
+                </a>
+              </li>
+              </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/employeeWeeklyTimesheet" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Weekly TImesheet  </p>
+                </a>
+              </li>
+              </ul>
+              </nav>
+
+
+
+<!---------------create role----------------->
+
+
+      <!------------create role end------------->
+
+         
+<!-- add Employee starting --------->
+
+<!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+
+<!--- add client ending-->
+
+
+   
+<!-- add project--------->
+
+<!--- add project ending-->
+
+
+<!-- dailyTimesheet starting-->
+
+
+
+<!-- dailyTimesheet Ending-->
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 </div>
 
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-   
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h5 class="m-0 text-dark">Weekly Timesheet</h5>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">Rahul</li>
+              <li class="breadcrumb-item ">E123456789</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
 
-            
-<div class="card-header">
-  <h3 class="card-title">Add Project</h3>
-</div>
-<!--/.card-header -->
 
-<div class="card-body">
-  <form class="form-horizontal">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Project Name</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label  for="inputEmail3" class="col-form-label">Client</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Client Company">
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label class=" control-label">Project Description</label>
-            <textarea id="inputDescription" class="form-control" rows="5"></textarea>
-          </div>
-          <!-- /.form-group -->
-          
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Estimated Budget</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Estimated Duration</label>
-            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Amount Spent</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Start Date </label>
-            
-            <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                  <input type="date" class="form-control" placeholder="Estimated Budget">
-                  
+
+
+    <form action="viewEmployee" method="POST">
+    @csrf
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                 <button  type="button" class="btn btn-info">Select Date Range</button>
+                
               </div>
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Project Leader</label>
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Employees</label>
-            <input type="text" class="form-control" id="inputPassword3" placeholder="Estimated Budget">
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">End Date </label>
-            <input type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Status</label>
-             <select name="example1_length" aria-controls="example1" class="form-control" >
-                        <option>Select Status </option>
-                         <option>On Hold</option>
-                         <option>Cancelled</option>
-                         <option>In Process</option>
-                         <option>On Hold</option>
-                      </select>
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-  </form>
-  <!--/.form-->
-</div>
-<!-- /.card-body-->
-
-          <div class="card-footer">
-            <div class="col-ms-6 float-right">
-              <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
-              &emsp;
-              <button type="submit" class="btn btn-success default float-right ">Create</button>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="myTable" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th style="text-align:center;width: 30%">Date</th>
+                    <th style="text-align:center">Time Spent</th>
+                    <th style="text-align:center">Options</th>
+                    
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center" >Monday  01/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center" >Tuesday  02/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center" >Thursday  03/04/2022</td>
+                    <td style="text-align:center">8 Hrs</td>
+                    <td style="text-align:center"> <a href="viewTimesheet">view</a></td>
+                  </tr>
+                 
+                  </tbody>
+                 
+                </table>
+              </div>
+             
+              <!-- /.card-body -->
             </div>
-          </div>            
+
+            
+             <div class="card-footer">
+            <div class="col-ms-6 float-bottom">
+              <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
+              &emsp;
+              &emsp;
+               <button type="button" id="close-button" class="btn btn-info">Copy last Entery</button>
+              &emsp;
+              &emsp;
+             <button type="submit" id="close-button" onclick="" class="btn btn-info">Save as template</button>
+              &emsp;
+              &emsp;
+              
+             <button type="submit" id="close-button" onclick="" class="btn btn-info">Submit</button>
+            </div>
+          </div>   
+        </form>
+
+             
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -328,7 +381,13 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+  <footer class="main-footer">
+    <strong>Samishti Infotech private Ltd. <a href="http://adminlte.io">All rights reserved</a></strong>
+    <!-- All rights reserved.-->
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.1
+    </div>
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -411,6 +470,36 @@ DIALOG.addEventListener('cancel', function(e) {
 	e.preventDefault();
 });
 
+</script>
+
+
+
+
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+
+  cell0.innerHTML = "<input type=\"date\" name=\"dateof\" style=\"width:100%;border:none\" />";
+  cell1.innerHTML = "<input type=\"text\" name=\"customerName\"  style=\"width:100%;border:none\"/>";
+  cell2.innerHTML = "<input type=\"text\" name=\"ProjectName\"  style=\"width:100%;border:none\"/>";
+
+}
 </script>
 
 

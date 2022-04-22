@@ -28,6 +28,29 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 
+<!-- table fix data-->
+  <style>
+	.fixTableHead {
+	overflow-y: auto;
+	height: 110px;
+	}
+	.fixTableHead thead th {
+	position: sticky;
+	top: 0;
+	}
+	table {
+	border-collapse: collapse;		
+	width: 100%;
+	}
+	th,
+	td {
+	padding: 8px 15px;
+	border: 2px solid #529432;
+	}
+	th {
+	background: #ABDD93;
+	}
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -44,11 +67,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Home</a>
+        <a href="createAuthorization" class="nav-link">Home</a>
       </li>
-      
+     
     </ul>
-    
 
     <!--------------------------------- SEARCH FORM -------------------------->
     <form class="form-inline ml-3">
@@ -158,7 +180,6 @@
     </ul>
   </nav>
   <!-- /.navbar -->
-
   <!------------------------ Main Sidebar Container ------------------------->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -246,7 +267,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview ">
             <a href="./createRole" class="nav-link ">
               <i class="ion-person-add"></i>  
               <p>
@@ -257,7 +278,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link active">
+                <a href="./addEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
                   <p>Add Employee</p>
                 </a>
@@ -274,8 +295,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
-            <a href="./createRole" class="nav-link ">
+          <li class="nav-item has-treeview">
+            <a href="./createRole" class="nav-link  ">
              <i class="fas fa-address-card"></i>
               <p>
                  Client
@@ -302,7 +323,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
+          <li class="nav-item has-treeview menu-open">
             <a href="./createRole" class="nav-link ">
               <i class="fa fa-tasks"></i>  
               <p>
@@ -313,7 +334,7 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addProjectScreen" class="nav-link ">
+                <a href="./addProjectScreen" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>  
                   <p>Add project</p>
                 </a>
@@ -374,110 +395,67 @@
 
             
 <div class="card-header">
- <li class="nav-item d-none d-sm-inline-block">
-      <h6>Add Employee</h6>
-      </li>
-       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/viewEmployee" class="nav-link">View Employees</a>
-      </li>
+  <h3 class="card-title">Add Project</h3>
 </div>
-
 <!--/.card-header -->
 
 <div class="card-body">
-  <form  id="quickForm" method="POST"  class="form-horizontal">
-  @csrf
-  <!-- <div class="form-group form-inline">
-            <label for="inputEmail3" class="control-label">Employee ID :  &ensp; </label>
-           <input name="EMPLOYEE_ID" type="text" class="form-control" id="inputEmail" value ="" placeholder="">               
-        <a href="/viewEmployee" class="nav-link">Edit</a>  -->
-   
-
-           <!--  <div class="card-body">
-                
-                <input type="checkbox" name="my-checkbox" value="1" checked data-bootstrap-switch data-off-color="warning" data-on-color="primary">
-              </div> -->
-                        
-           <!--  <button  onclick="window.location.href='./addProjectButton';" type="button" class="btn btn-info"> Edit</button>
-           </div> -->
-  
+   <form  action="{{route('project.store')}}" method="POST" class="form-horizontal" style="font-size:15px;">
+                  @csrf
+                 
       <div class="row">
         <div class="col-md-6">
-         
-          
-          <!-- /.form-group -->
-           
           <div class="form-group">
-        
-            <label  for="inputEmail3" class="col-form-label">Basic Details</label>
+            <label for="inputEmail3" class="control-label">Project Name</label>
+            <input name="PROJECT_NAME" type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label  for="inputEmail3" class="col-form-label">Client</label>
+            <input name="CLIENT_COMPANY" type="text" class="form-control" id="inputEmail3" placeholder="Client">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class=" control-label">Project Description</label>
+            <textarea name="PROJECT_DESCRIPTION"id="inputDescription" class="form-control" rows="5"></textarea>
+          </div>
+          <!-- /.form-group -->
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Estimated Budget</label>
+            <input name="EST_BUDGET" type="text" class="form-control" id="inputEmail3" placeholder="Estimated Budget ">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Estimated Duration(in days)</label>
+            <input name="PROJECT_DURATION" type="text" class="form-control" id="inputPassword3" placeholder="Estimated Duration">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Amount Spent</label>
+            <input name="EST_AMT_SPEND" type="text" class="form-control" id="inputEmail3" placeholder="Amount Spent">
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Start Date </label>
             
-     
+            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                  <input name="START_DATE"type="date" class="form-control" placeholder="Estimated Budget">
+                  
+              </div>
           </div>
-          
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-       
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <div class="row"> <! row 1-->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">First Name </label>
-            <input name="EMPLOYEE_FIRST_NAME" type="text" class="form-control" id="firstName" value="" placeholder="First Name">
-          </div>
-          <div class="form-group">
-            <label name="inputEmail3" class="control-label">Last Name </label>
-            <input NAME="EMPLOYEE_LAST_NAME" type="text" class="form-control" id="lastName" value="" placeholder="Last Name">
-          </div>
-
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Address </label>
-            <input name="ADDRESS" type="text" class="form-control" id="address" value="" placeholder="Address">
-          </div>
-          <!--Hello -->
-          <div class="form-group ">
-                        <div class="custom-control custom-checkbox">
-                       
-                          <input  name="is_RM"  value="1" class="custom-control-input"  type="checkbox" id="customCheckbox1">
-                          <label  for="customCheckbox1"   class="custom-control-label">is Employee Reporting Manager?</label>
-                        </div>         
-                      
-          </div>
-          <!--Hello -->
-          
-          <!-- /.form-group -->
-          <div class="form-group">
-        
-            <label id="inputPassword3" class=" col-form-label">Manager Details</label>
-           
-           
-    
-          </div>
-          
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Middle Name</label>
-            <input name="EMPLOYEE_MIDDLE_NAME" type="text" class="form-control" id="middleName"  value="" placeholder="Middle  Name">
-          </div>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="EMPLOYEE_EMAIL" class="form-control" id="email"  value="" placeholder="Email ID">
-                  </div>
-          
-          
-           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Contact Number </label>
-            <input name="CONTACT" type="text" class="form-control" id="contact" placeholder="Contact Number">
-          </div>
-          
-          
-          <!-- /.form-group -->
-        
           <!-- /.form-group -->
         </div>
         <!-- /.col -->
@@ -486,69 +464,51 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">Reporting Manager</label>
-
-            <select name="input123"  aria-controls="example1" id="input123" onChange="getEmail()" class="form-control" >
-                        <option  value="">Reporting Manager </option>
-                        @foreach($collection as $item)
-                        <option  value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > {{$item['EMP_FULLNAME']}}   </option>
-
-                             @endforeach
-                      </select>
-          
+            <label for="inputEmail3" class="control-label">Project Leader</label>
+            <input name="PROJECT_LEADER" type="text" class="form-control" id="inputEmail3" placeholder="Project Leader">
           </div>
           <!-- /.form-group -->
-         
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Employees</label>
+            <input name="" type="text" class="form-control" id="inputPassword3" placeholder="Employees">
+          </div>
           <!-- /.form-group -->
         </div>
         <!-- /.col -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="inputEmail3" class="control-label">RM Email</label>  
-         
-            <select DISABLED name="input1234"  aria-controls="" id="input1234" class="form-control" >
-                        <option  value="">RM Email </option>
-                        @foreach($collection as $item)
-                        <option value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > {{$item['EMPLOYEE_EMAIL']}}   </option>
-                       
-                             @endforeach
-                      </select>
+            <label for="inputEmail3" class="control-label">End Date </label>
+            <input name="END_DATE" type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
           </div>
           <!-- /.form-group -->
-        
+          <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Status</label>
+             <select  name="PROJECT_STATUS" aria-controls="example1" class="form-control" >
+                        <option value="">Select Status </option>
+                         <option value="1" >On Hold</option>
+                         <option value="2">Cancelled</option>
+                         <option value="3">In Process</option>
+                         <option value="4">Not Started Yet</option>
+                      </select>
+          </div>
           <!-- /.form-group -->
         </div>
         <!-- /.col -->
       </div>
-       <input  type="hidden" name="REPORTING_MANAGER" type="text" class="form-control" id="REPORTING_MANAGER" placeholder="Contact Number">
-        <input type="hidden"  name="REPORTING_MANAGER_EMAIL_ID" type="text" class="form-control" id="REPORTING_MANAGER_EMAIL_ID" placeholder="Contact Number">
-       
-      <!-- /.row -->
-     <div class="footer float-right"
+        <div class="card-footer">
             <div class="col-ms-6 float-right">
               <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
               &emsp;
-             <button type="submit" onclick="myFunction()" class="btn btn-success ">
-                  Add Employee
-                </button>
+              <button type="submit" class="btn btn-success default float-right ">Create</button>
             </div>
-          
-         
+          </div>        
+      <!-- /.row -->
   </form>
   <!--/.form-->
 </div>
 <!-- /.card-body-->
 
-         
-
-          <div class="wrapper">
-   <div class="card-body">
-    
-               
-              </div>
-              </div>
-
-
+            
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -617,158 +577,46 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
-
-
-
-
-
-
-
-
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="../../plugins/toastr/toastr.min.js"></script>
-<!-- AdminLTE App -->
-
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-
-
-
-
-
 <script>
-function getEmail(){
-  
-      
-  var x=document.getElementById("input123").value;
-  document.getElementById("input1234").value=x;
 
+var SHOW_FORM_BUTTON = document.querySelector("#fill-form-button"),
+	DIALOG = document.querySelector("#form-dialog"),
+	FORM_SUBMIT_BUTTON = document.querySelector("#submit-button"),
+	FORM_CANCEL_BUTTON = document.querySelector("#close-button"),
+	FORM_STATUS = document.querySelector("#form-status");
 
-   console.log(x);
-   var MyArray = x.split('_');
-   console.log(MyArray[0]);
-  
-  document.getElementById("REPORTING_MANAGER").value=MyArray[0];
-  document.getElementById("REPORTING_MANAGER_EMAIL_ID").value=MyArray[1];
-}
-</script>
+// show dialog
+SHOW_FORM_BUTTON.addEventListener('click', function() {
+	DIALOG.showModal();
+});
 
+// form submission is cancelled
+FORM_CANCEL_BUTTON.addEventListener('click', function() {
+	DIALOG.close('CANCELLED');
+});
 
-<!-- Bootstrap 4 -->
+// when form is submitted
+FORM_SUBMIT_BUTTON.addEventListener('click', function() {
+	// write code here for form submission with ajax
 
-<!-- Select2 -->
-<script src="../../plugins/select2/js/select2.full.min.js"></script>
-<!-- Bootstrap4 Duallistbox -->
-<script src="../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-<!-- InputMask -->
-<script src="../../plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
-<!-- date-range-picker -->
-<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Bootstrap Switch -->
-<script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+	// when ajax form submission is successful
+	DIALOG.close('SUBMITTED');
+});
 
+// fired when dialog is closed
+DIALOG.addEventListener('close', function() {
+	if(DIALOG.returnValue === 'SUBMITTED')
+		FORM_STATUS.textContent = 'Form is submitted';
+	else if(DIALOG.returnValue === 'CANCELLED')
+		FORM_STATUS.textContent = 'Form submission is cancelled';
+});
 
-<script>
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-      theme: 'bootstrap4'
-    })
-
-    //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    //Money Euro
-    $('[data-mask]').inputmask()
-
-    //Date range picker
-    $('#reservationdate').datetimepicker({
-        format: 'L'
-    });
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({
-      timePicker: true,
-      timePickerIncrement: 30,
-      locale: {
-        format: 'MM/DD/YYYY hh:mm A'
-      }
-    })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
-    //Timepicker
-    $('#timepicker').datetimepicker({
-      format: 'LT'
-    })
-    
-    //Bootstrap Duallistbox
-    $('.duallistbox').bootstrapDualListbox()
-
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    $('.my-colorpicker2').on('colorpickerChange', function(event) {
-      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-    });
-
-    $("input[data-bootstrap-switch]").each(function(){
-      $(this).bootstrapSwitch('state', $(this).prop('checked'));
-    });
-
-  })
-</script>
-
-<script>
-function myFunction(){
-     @foreach($employeeID as $item)
-  alert("Generated Employee ID is "+{{$item['EMPLOYEE_ID']}});
-   @endforeach
-}
+// cancel effect of ESC key
+DIALOG.addEventListener('cancel', function(e) {
+	e.preventDefault();
+});
 
 </script>
-
-
-
-
-
-
-
-
 
 
 </body>

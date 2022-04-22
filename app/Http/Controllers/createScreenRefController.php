@@ -18,8 +18,9 @@ class createScreenRefController extends Controller
     {
      
       
-       $collection= Http::get("http://localhost/timesheet_api/screen/get.php ")->json()  ;
-        return  view('createScreenRef')->with(compact('collection'));
+       $collection= Http::get("http://localhost/timesheet_api/screen/get.php ")->json();
+       $screen= Http::get("http://localhost/timesheet_api/authorization/get.php ")->json();
+        return  view('createScreenRef')->with(compact('collection','screen'));
     }
      public function store(Request $request)
         {

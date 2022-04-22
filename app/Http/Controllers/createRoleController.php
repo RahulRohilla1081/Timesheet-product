@@ -22,8 +22,9 @@ class createRoleController extends Controller
 {
      public function index()
     {
-        $collection= Http::get("http://localhost/timesheet_api/role/get.php")->json()  ;
-        return  view('createRole')->with(compact('collection'));
+        $collection= Http::get("http://localhost/timesheet_api/role/get.php")->json();
+        $screen= Http::get("http://localhost/timesheet_api/authorization/get.php")->json();
+        return  view('createRole')->with(compact('collection','screen'));
 
     }
      public function store(Request $request)

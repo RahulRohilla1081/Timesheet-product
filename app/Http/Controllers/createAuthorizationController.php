@@ -7,35 +7,23 @@ use Illuminate\Support\Facades\Http;
 
 
 
-
-
 use App\Http\Controllers\Controller;
-
-
-
 use Illuminate\Support\Facades\Storage;
-
 use Illuminate\Support\Facades\File;
-
 use GuzzleHttp\Client;
-
 use Auth;
 
 class createAuthorizationController extends Controller
 {
     public function index()
     {
-        $collection= Http::get("http://localhost/timesheet_api/authorization/get.php")->json()  ;
-        return  view('createAuthorization')->with(compact('collection'));
+        $collection= Http::get("http://localhost/timesheet_api/authorization/get.php")->json();
+        $screen= Http::get("http://localhost/timesheet_api/screen/get.php")->json();
+        return  view('createAuthorization')->with(compact('collection','screen'));
         
 
     }
-     public function getScreen()
-    {
-        $screen= Http::get("http://localhost/timesheet_api/screen/get.php")->json()  ;
-        return  view('createAuthorization')->with(compact('screen'));
-
-    }
+   
 
         public function store(Request $request)
         {

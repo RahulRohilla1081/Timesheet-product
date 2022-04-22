@@ -28,24 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Modals & Alerts</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-  <!-- Toastr -->
-  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -62,11 +44,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Home</a>
+        <a href="createAuthorization" class="nav-link">Home</a>
       </li>
-      
+     
     </ul>
-    
 
     <!--------------------------------- SEARCH FORM -------------------------->
     <form class="form-inline ml-3">
@@ -168,10 +149,30 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button">
           <i class="fas fa-user-alt"></i>
         </a>
+           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> Profile
+           
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> register 
+          
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> Logout
+          
+          </a>
+          
+        
+        </div>
       </li>
     </ul>
   </nav>
@@ -202,180 +203,65 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-user-lock"></i>
-              <p>
-                Authorization
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/createAuthorization" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Authorization</p>
-                </a>
-              </li>
-              </ul>
-               <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/createScreenref" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Screen Reference  </p>
-                </a>
-              </li>
-              </ul>
-              </nav>
-
-
-
-<!---------------create role----------------->
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
-            <a href="./createRole" class="nav-link ">
-              <i class="fas fa-user-tag"></i>
-              <p>
-                 Role
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./createRole" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Role</p>
-                </a>
-              </li>
-        </ul>
-        </ul>
-      </nav>
-
-      <!------------create role end------------->
-
-         
-<!-- add Employee starting --------->
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
-            <a href="./createRole" class="nav-link ">
-              <i class="ion-person-add"></i>  
-              <p>
-                 Employees
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
-                </a>
-              </li>
-        </ul>
-        </ul>
-      </nav>
-<!--- add Employee ending-->
-
-
-
-<!-- add client starting --------->
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="./createRole" class="nav-link ">
-             <i class="fas fa-address-card"></i>
-              <p>
-                 Client
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./addClient" class="nav-link active ">
-                  <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Client</p>
-                </a>
-              </li>
-        </ul>
-        </ul>
-      </nav>
-<!--- add client ending-->
-
-
-   
-<!-- add project--------->
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
-            <a href="./createRole" class="nav-link ">
-              <i class="fa fa-tasks"></i>  
-              <p>
-                 Project
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./addProjectScreen" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>  
-                  <p>Add project</p>
-                </a>
-              </li>
-        </ul>
-        </ul>
-      </nav>
-<!--- add project ending-->
-
-
-<!-- dailyTimesheet starting-->
-
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="fas fa-user-lock"></i>
               <p>
-                Timesheet
+                TImesheet
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/dailyTimesheet" class="nav-link ">
+                <a href="/employeeDailyTimesheet" class="nav-link active ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daily TImesheet</p>
                 </a>
               </li>
               </ul>
-               <ul class="nav nav-treeview">
+             <!--  <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/viewTimesheet" class="nav-link ">
+                <a href="/employeeWeeklyTimesheet" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>View Timesheet  </p>
+                  <p>Weekly TImesheet  </p>
                 </a>
               </li>
-              </ul>
+              </ul> -->
               </nav>
+
+
+
+<!---------------create role----------------->
+
+
+      <!------------create role end------------->
+
+         
+<!-- add Employee starting --------->
+
+<!--- add Employee ending-->
+
+
+
+<!-- add client starting --------->
+
+<!--- add client ending-->
+
+
+   
+<!-- add project--------->
+
+<!--- add project ending-->
+
+
+<!-- dailyTimesheet starting-->
+
+
 
 <!-- dailyTimesheet Ending-->
       <!-- /.sidebar-menu -->
     </div>
+    <!-- /.sidebar -->
   </aside>
     <!-- /.sidebar -->
 </div>
@@ -384,155 +270,138 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-   
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h5 class="m-0 text-dark">Daily Timesheet</h5>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">Rahul</li>
+              <li class="breadcrumb-item ">E123456789</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
 <!-----------------------------------Screen Main content------------------->
   <!-- Main content Staring  -->
 
-            
-<div class="card-header">
- <li class="nav-item d-none d-sm-inline-block">
-      <h6>Add Client</h6>
-      </li>
-       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/viewClient" class="nav-link">View Client</a>
-      </li>
-</div>
-
-<!--/.card-header -->
-
-<div class="card-body">
-  <form action="{{route('addClient.store')}}"  id="quickForm" method="POST"  class="form-horizontal">
-  @csrf
-  
-  
-      <div class="row">
-        <div class="col-md-6">
-         
-          
-          <!-- /.form-group -->
-           
-          <div class="form-group">
-         
-            <label  for="inputEmail3" class="col-form-label">Basic Details</label>
-          </div>
-          
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-       
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <div class="row"> <! row 1-->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Customer Full Name </label>
-            <input name="CUSTOMER_FULL_NAME" type="text" class="form-control" id="inputEmail3" placeholder="Customer Full Name">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Start Month</label>
-            <input name="START_MONTH"type="text" class="form-control" id="inputEmail3" placeholder="Start Month">
-          </div>
-
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Location </label>
-            <input name="LOCATION" type="text" class="form-control" id="inputEmail3" placeholder="Location">
-          </div>
-          
-          <!-- /.form-group -->
-          <div class="form-group">
-         
-            <label id="inputPassword3" class=" col-form-label">Manager Details</label><br><br>
-           
-           
-      
-          </div>
-          
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label"> Email ID</label>
-            <input name="EMAIL" type="text" class="form-control" id="inputEmail3" placeholder="Email ID">
-          </div>
- <div class="form-group">
-            <label for="inputEmail3" class="control-label">Start Year</label>
-            <input name="START_YEAR" type="text" class="form-control" id="inputEmail3" placeholder="Start Year">
-          </div>
-          
-           
-          
-          <!-- /.form-group -->
-        
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Project Manager</label>
-           
-             <select name="input123"  aria-controls="example1" id="input123" onChange="getEmail()" class="form-control" >
-                        <option  value="">Reporting Manager </option>
-                        @foreach($data as $item)
-                        <option  value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > {{$item['EMP_FULLNAME']}}   </option>
-
-                             @endforeach
-                      </select>
-          </div>
-          <!-- /.form-group -->
-         
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Email ID</label>
-           
-
-                 <select DISABLED name="input1234"  aria-controls="" id="input1234" class="form-control" >
-                        <option  value="">RM Email </option>
-                        @foreach($data as $item)
-                        <option value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > 
-                        {{$item['EMPLOYEE_EMAIL']}}   </option>
-                       
-                             @endforeach
-                      </select>
-          </div>
-          <!-- /.form-group -->
-        
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-        <input  type="hidden" name="REPORTING_MANAGER" type="text" class="form-control" id="REPORTING_MANAGER" placeholder="Contact Number">
-        <input type="hidden"  name="REPORTING_MANAGER_EMAIL_ID" type="text" class="form-control" id="REPORTING_MANAGER_EMAIL_ID" 
-
-
-      <div class="card-footer">
-            <div class="col-ms-6 float-right">
-              <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
-              &emsp;
-             <button type="submit" class="btn btn-success ">
-                  Add Client
-                </button>
+   
+   
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+             
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="myTable" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th style="width: 10%">Date</th>
+                    <th style="width: 20%">Customer Name</th>
+                    <th style="width: 20%">Project Name</th>
+                    <th style="width: 20%">Phase</th>
+                    <th style="width: 20%">Activity</th>
+                    <th style="width: 20%">Description</th>
+                    <th style="width: 20%">Hours </th>
+                  </tr>
+                  </thead>
+                 <tbody> 
+              @foreach($timesheet as $item)
+              <tr>
+                      <td>
+                          <a>
+                             {{$item['DATE']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td>
+                          <a>
+                              {{$item['CUSTOMER_NAME']}} 
+                          </a>
+                          <br>
+                         
+                      </td>
+                      <td class="project_progress">
+                           <a>
+                              {{$item['PROJECT_NAME']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['PHASE']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['ACTIVITY']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['DESCRIPTION']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                     <td class="project_progress">
+                           <a>
+                              {{$item['HOURS']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                   
+                         <!--------------Table ending---------->
+                  </tr>
+                  @endforeach
+              </tbody>
+                 
+                </table>
+              </div>
+             
+              <!-- /.card-body -->
             </div>
-          </div> 
-  </form>
-  <!--/.form-->
-</div>
-<!-- /.card-body-->
+             <form action="{{route('employeeDailyTimesheet.store')}}"  id="timesheet" method="POST"  class="form-horizontal">
+  @csrf
+<input type="hidden"  name="DATE" type="text" class="form-control" id="input1" placeholder="Contact Number">
+<input type="hidden" name="CUSTOMER_NAME" type="text" class="form-control" id="input2" placeholder="Contact Number">
+<input type="hidden"  name="PROJECT_NAME" type="text" class="form-control" id="input3" placeholder="Contact Number">
+<input  type="hidden" name="PHASE" type="text" class="form-control" id="input4" placeholder="Contact Number">
+<input type="hidden"  name="ACTIVITY" type="text" class="form-control" id="input5" placeholder="Contact Number">
+<input type="hidden" name="DESCRIPTION" type="text" class="form-control" id="input6" placeholder="Contact Number">
+<input  type="hidden"  name="HOURS" type="text" class="form-control" id="input7" placeholder="Contact Number">
+  <div class="card-footer">
+            <div class="col-ms-6 float-bottom">
+              <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
+              &emsp;
+              &emsp;
+               <button type="button" id="close-button" class="btn btn-info">Save</button>
+              &emsp;
+              &emsp;
+             <button type="submit" id="close-button"  class="btn btn-info">Submit</button>
+            </div>
+          </div>  
 
           
+            
+        </form>
+    
 
-        
 
 
+             
             <!--------------------------main content ending-------------------------------------->
 
            
@@ -557,7 +426,13 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+  <footer class="main-footer">
+    <strong>Samishti Infotech private Ltd. <a href="http://adminlte.io">All rights reserved</a></strong>
+    <!-- All rights reserved.-->
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.1
+    </div>
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -645,34 +520,71 @@ DIALOG.addEventListener('cancel', function(e) {
 
 
 
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="../../plugins/toastr/toastr.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<!-- page script -->
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+  var cell3 = row.insertCell(3);
+  var cell4 = row.insertCell(4);
+  var cell5 = row.insertCell(5);
+  var cell6 = row.insertCell(6);
+  var cell7 = row.insertCell(7);
+  cell0.innerHTML = "<input type=\"date\" name=\"date\" id=\"date\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
+  cell1.innerHTML = "<select type=\"text\" name=\"customerName\" id=\"customerName\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>><option>Select Customer</option> @foreach($client as $item)<option> {{$item['CUSTOMER_FULL_NAME']}} </option>@endforeach</select> ";
+  cell2.innerHTML = "<select type=\"text\" name=\"projectName\" id=\"projectName\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Project</option> @foreach($project as $item)<option> {{$item['PROJECT_NAME']}} </option>@endforeach</select> ";
+  cell3.innerHTML = "<select type=\"text\" name=\"phase\"  id=\"phase\" onChange=\"getEmail()\"style=\"width:100%;border:none\"/>><option>Select Phase</option><option> Project Preparation</option><option>Business Blueprint</option><option>Realization</option><option>Final Preparation</option><option>Go-Live</option><option>Hypercare Support</option><option>Training</option><option>Design</option><option>Discover</option><option>Landscape Transformation</option><option>Support</option><option>Organizational Activities</option><option>No Work</option></select> ";
+  cell4.innerHTML = "<select type=\"text\" name=\"activity\"  id=\"activity\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Activity</option><option>Meeting</option><option>Development</option><option>Testing</option><option>Go-Live</option><option>Service Request</option><option>Incident</option><option>Change Request</option><option>Customer Visit</option><option>Training</option><option>Project Training</option><option>Absent</option></select> ";
+  cell5.innerHTML = "<input type=\"text\" name=\"Description\" id=\"Description\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
+  cell6.innerHTML = "<input type=\"text\" name=\"hour\"  id=\"hour\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>";
+  cell7.innerHTML = "<button type=\"submit\" name=\"edit\"  style=\"width:100%;border:none\">Edit</button";
+
+
+
+
+}
+</script>
 
 
 <script>
 function getEmail(){
   
-      
-  var x=document.getElementById("input123").value;
-  document.getElementById("input1234").value=x;
+      var a=document.getElementById("date").value;
+  document.getElementById("input1").value=a;
 
-
-   console.log(x);
-   var MyArray = x.split('_');
-   console.log(MyArray[0]);
+  var b=document.getElementById("customerName").value;
+  document.getElementById("input2").value=b;
   
-  document.getElementById("REPORTING_MANAGER").value=MyArray[0];
-  document.getElementById("REPORTING_MANAGER_EMAIL_ID").value=MyArray[1];
+  var c=document.getElementById("projectName").value;
+  document.getElementById("input3").value=c;
+
+  var d=document.getElementById("phase").value;
+  document.getElementById("input4").value=d;
+
+  var e=document.getElementById("activity").value;
+  document.getElementById("input5").value=e;
+
+  var f=document.getElementById("Description").value;
+  document.getElementById("input6").value=f;
+
+  var g=document.getElementById("hour").value;
+  document.getElementById("input7").value=g;
+  
+
+
 }
 </script>
 
