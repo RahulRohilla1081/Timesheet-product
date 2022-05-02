@@ -275,9 +275,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>View Employee</p>
                 </a>
               </li>
         </ul>
@@ -404,6 +404,92 @@
                         
                         <!-- main Contentstarted-->
 
+  <form  action= "{{route('viewClient.store')}}" method="POST" class="form-horizontal" style="font-size:15px;">
+                  @csrf
+                 <div class="modal fade " id="editModel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+          <div class="card-header">
+                <h3 class="card-title">Update Project Data</h3>
+                  
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           
+
+             <input type="hidden"  name="START_MONTH" class="form-control" id="START_MONTH" placeholder="Name">
+             <input type="hidden"  name="START_YEAR" class="form-control" id="START_YEAR" placeholder="Name">
+               <div class="card-body">
+
+                  <div class="form-group">
+                   
+                   
+                      <input type="hidden"  name="CUSTOMER_CODE" class="form-control" id="CUSTOMER_CODE" placeholder="Code">
+   
+                  </div>
+                  <div class="form-group">
+                 
+                      <input type="hidden"  name="CUSTOMER_FULL_NAME" class="form-control" id="CUSTOMER_FULL_NAME" placeholder="Client Name">
+                  
+                  </div>
+                   <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Client Email</label>
+                  
+                      <input type="text"  name="CUSTOMER_EMAIL_ID" class="form-control" id="CUSTOMER_EMAIL_ID" placeholder="Client Email">
+                  
+                  </div>
+                   <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Client Location</label>
+                  
+                      <input type="text"  name="CUSTOMER_LOCATION" class="form-control" id="CUSTOMER_LOCATION" placeholder="Client Location">
+                  
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">REPORTING_MANAGER</label>
+                  
+                     
+
+                       <input  type="hidden" name="REPORTING_MANAGER" type="text" class="form-control" id="REPORTING_MANAGER" placeholder="Contact Number">
+        <input type="hidden"  name="REPORTING_MANAGER_EMAIL_ID" type="text" class="form-control" id="REPORTING_MANAGER_EMAIL_ID" >
+
+                       <select name="input123"  aria-controls="example1" id="input123" onChange="getEmail()" class="form-control" >
+                        <option  value="">Project Manager </option>
+                        @foreach($rmdetails as $item)
+                        <option  value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > {{$item['EMP_FULLNAME']}}   </option>
+
+                             @endforeach
+                      </select>
+                  
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">RM Email</label>
+                  
+                    
+
+                      <select DISABLED name="input1234"  aria-controls="" id="input1234" class="form-control" >
+                        <option  value=""> Email ID</option>
+                        @foreach($rmdetails as $item)
+                        <option value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > 
+                        {{$item['EMPLOYEE_EMAIL']}}   </option>
+                       
+                             @endforeach
+                      </select>
+                  
+                  </div>
+                  </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-info ">Update</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+</form>
 
 
  <div class="card">
@@ -414,28 +500,23 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th style="width: 5%" >Customer Short Name </th>
+                  <!--  <th style="width: 5%" >Customer Short Name </th> -->
                     <th style="width: 5%" >Customer code </th>
                     <th style="width: 5%" >Start Month </th>
                     <th style="width: 5%" >Start Year </th>
                     <th style="width: 30%">Customer Full Name</th>
                     <th style="width: 10%">Customer Email</th>
                     <th style="width: 20%">Location </th>
-                    <th style="width: 10%">Reporting Manager</th>
-                    <th style="width: 20%">RM Email</th>
+                    <th style="width: 10%">Project Manager</th>
+                    <th style="width: 20%"> Email ID</th>
+                    <th style="width: 20%">Edit</th>
                    
                   </tr>
                   </thead>
                   <tbody>
                 @foreach($collection as $item)
               <tr>
-                      <td>
-                          <a>
-                             {{$item['CUSTOMER_SHORT_NAME']}} 
-                          </a>
-                          <br>
-                         
-                      </td>
+                 
                       <td>
                           <a>
                               {{$item['CUSTOMER_CODE']}} 
@@ -491,6 +572,12 @@
                           </a>
                           <br>
                           
+                      </td>
+                        <td class="text-center">
+                          <button type="button" id="btninfo" value= "{{$item['CUSTOMER_CODE']}}_{{$item['START_MONTH']}}_{{$item['START_YEAR']}}_{{$item['CUSTOMER_FULL_NAME']}}_{{$item['CUSTOMER_EMAIL_ID']}}_{{$item['CUSTOMER_LOCATION']}}_{{$item['REPORTING_MANAGER']}}_{{$item['REPORTING_MANAGER_EMAIL_ID']}}"  class="btn btn-warning btninfo" data-toggle="modal" >
+                  <i class="fas fa-edit" >  </i>
+                </button>
+                        
                       </td>
                     
                      
@@ -660,6 +747,61 @@ DIALOG.addEventListener('cancel', function(e) {
   });
 </script>
 
+
+
+I<script>
+$(document).ready(function(){
+$(document).on('click','.btninfo',function(){
+
+    var project_id=$(this).val();
+
+    var MyArray = project_id.split('_');
+
+      document.getElementById("CUSTOMER_CODE").value=MyArray[0];
+      console.log("id"+MyArray[0]);
+      document.getElementById("START_MONTH").value=MyArray[1];
+      console.log("leader"+MyArray[1]);
+      document.getElementById("START_YEAR").value=MyArray[2];
+      console.log("emp"+MyArray[2]);
+      document.getElementById("CUSTOMER_FULL_NAME").value=MyArray[3];
+      console.log("status"+MyArray[3]);
+      document.getElementById("CUSTOMER_EMAIL_ID").value=MyArray[4];
+      console.log("end"+MyArray[4]);
+      document.getElementById("CUSTOMER_LOCATION").value=MyArray[5];
+      console.log("project_name"+MyArray[5]);
+      document.getElementById("REPORTING_MANAGER").value=MyArray[6];
+      console.log("description"+MyArray[6]);
+      document.getElementById("REPORTING_MANAGER_EMAIL_ID").value=MyArray[7];
+      console.log("client"+MyArray[7]);
+
+
+   
+    $('#editModel').modal('show');
+    
+ 
+
+});
+});
+
+</script>
+
+
+<script>
+function getEmail(){
+  
+      
+  var x=document.getElementById("input123").value;
+  document.getElementById("input1234").value=x;
+
+
+   console.log(x);
+   var MyArray = x.split('_');
+   console.log(MyArray[0]);
+  
+  document.getElementById("REPORTING_MANAGER").value=MyArray[0];
+  document.getElementById("REPORTING_MANAGER_EMAIL_ID").value=MyArray[1];
+}
+</script>
 
 </body>
 </html>

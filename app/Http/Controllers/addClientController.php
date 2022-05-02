@@ -18,8 +18,8 @@ class addClientController extends Controller
       public function index()
     {
        $collection= Http::get("http://localhost/timesheet_api/client/get.php")->json();
-         $data= Http::get("http://localhost/timesheet_api/reportingManager/getrmdetails.php")->json();
-        return  view('addClient')->with(compact('collection','data'));
+         $rmdetails= Http::get("http://localhost/timesheet_api/reportingManager/getrmdetails.php")->json();
+        return  view('addClient')->with(compact('collection','rmdetails'));
 
         
 

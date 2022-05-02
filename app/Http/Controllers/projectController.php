@@ -20,7 +20,9 @@ class projectController extends Controller
     {
        
         $screen= Http::get("http://localhost/timesheet_api/project/get.php")->json();
-        return  view('project')->with(compact('screen'));
+           $employee= Http::get("http://localhost/timesheet_api/employee/getemp.php ")->json();
+            $collection= Http::get("http://localhost/timesheet_api/client/get.php")->json();
+        return  view('project')->with(compact('screen','employee','collection'));
         
     }
    
@@ -32,12 +34,13 @@ class projectController extends Controller
             $PROJECT_STATUS=$request->get('PROJECT_STATUS');
             $CLIENT_COMPANY=$request->get('CLIENT_COMPANY');
             $PROJECT_LEADER=$request->get('PROJECT_LEADER');
+            $EMP_FULLNAME=$request->get('EMP_FULLNAME');
             $EST_BUDGET=$request->get('EST_BUDGET');
             $EST_AMT_SPEND=$request->get('EST_AMT_SPEND');
             $PROJECT_DURATION=$request->get('PROJECT_DURATION');
             $START_DATE=$request->get('START_DATE');
             $END_DATE=$request->get('END_DATE');
-            $OVERDUE=$request->get('EST_AMT_SPEND');
+            $OVERDUE=$request->get('OVERDUE');
            
             $client=new Client([
                 "base_url"=>"http://localhost",
@@ -50,6 +53,7 @@ class projectController extends Controller
                     'PROJECT_STATUS'=>$PROJECT_LEADER,
                     'CLIENT_COMPANY'=>$CLIENT_COMPANY,
                     'PROJECT_LEADER'=>$PROJECT_LEADER,
+                    'EMP_FULLNAME'=>$EMP_FULLNAME,
                     'EST_BUDGET'=>$EST_BUDGET,
                     'EST_AMT_SPEND'=>$EST_AMT_SPEND,
                     'PROJECT_DURATION'=>$PROJECT_DURATION,
@@ -64,5 +68,10 @@ class projectController extends Controller
             return redirect('/addProjectScreen');
 
         }
+
+        
+
+
+        
     
 }

@@ -274,9 +274,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link active">
+                <a href="./viewEmployee" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>View Employee</p>
                 </a>
               </li>
         </ul>
@@ -390,14 +390,7 @@
   <!-- Main content Staring  -->
 
             
-<div class="card-header">
- <li class="nav-item d-none d-sm-inline-block">
-   <a href="./addEmployee" class="nav-link">Add Employee</a>
-      </li>
-       <li class="nav-item d-none d-sm-inline-block">
-       <h6>View Employees</h6>
-      </li>
-</div>
+
 
 <!--/.card-header -->
                         
@@ -416,7 +409,6 @@
                     <th  class="text-center" style="width: 5%" >Employee ID</th>
                     <th  class="text-center" style="width: 25%">Employee Full Name</th>
                     <th  class="text-center" style="width: 30%">Employee Email</th>
-                    <th  class="text-center" style="width: 30%">Address</th>
                     <th  class="text-center" style="width: 30%">Contact</th>
                     <th  class="text-center" style="width: 30%">Reporting Manager </th>
                     <th  class="text-center" style="width: 30%">RM Email</th>
@@ -435,7 +427,7 @@
                       </td>
                       <td  class="text-center">
                           <a>
-                              {{$item['EMPLOYEE_NAME']}} 
+                              {{$item['EMP_FULLNAME']}} 
                           </a>
                           <br>
                          
@@ -447,13 +439,7 @@
                           <br>
                           
                       </td>
-                      <td  class="text-center">
-                           <a>
-                              {{$item['ADDRESS']}} 
-                          </a>
-                          <br>
-                          
-                      </td>
+                   
                       <td  class="text-center">
                            <a>
                               {{$item['CONTACT']}} 

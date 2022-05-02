@@ -275,9 +275,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>View Employee</p>
                 </a>
               </li>
         </ul>
@@ -393,8 +393,27 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">Rahul</li>
-              <li class="breadcrumb-item ">E123456789</li>
+              <li class="breadcrumb-item">
+              <div class="ml-3 relative">
+                    <x-jet-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            
+                            @else
+                                <span class="inline-flex rounded-md">
+                                    
+                                        {{ Auth::user()->name }}
+                                       / {{ Auth::user()->email }}
+                                  
+                                </span>
+                            @endif
+                        </x-slot>
+                        <x-slot name="content">
+                        </x-slot>
+                    </x-jet-dropdown>
+                </div>
+                </li>
+             
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -417,7 +436,7 @@
                   <thead>
                   <tr>
                     <th style="width: 10%">Date</th>
-                    <th style="width: 20%">Customer Name</th>
+                    <th style="width: 20%">Client Name</th>
                     <th style="width: 20%">Project Name</th>
                     <th style="width: 20%">Phase</th>
                     <th style="width: 20%">Activity</th>
@@ -433,7 +452,7 @@
                     <td>Training</td>
                     <td >Development</td>
                     <td> dailyTimesheet Screen</td>
-                    <td> 8 Hrs</td>
+                    <td> 8 </td>
                   </tr>
                  
                   </tbody>
@@ -443,30 +462,31 @@
              
               <!-- /.card-body -->
             </div>
-             <form action="{{route('viewTimesheet.store')}}"  id="timesheet" method="POST"  class="form-horizontal">
-  @csrf
-<input type="hidden"  name="DATE" type="text" class="form-control" id="input1" placeholder="Contact Number">
-<input type="hidden" name="CUSTOMER_NAME" type="text" class="form-control" id="input2" placeholder="Contact Number">
-<input type="hidden"  name="PROJECT_NAME" type="text" class="form-control" id="input3" placeholder="Contact Number">
-<input  type="hidden" name="PHASE" type="text" class="form-control" id="input4" placeholder="Contact Number">
-<input type="hidden"  name="ACTIVITY" type="text" class="form-control" id="input5" placeholder="Contact Number">
-<input type="hidden" name="DESCRIPTION" type="text" class="form-control" id="input6" placeholder="Contact Number">
-<input  type="hidden"  name="HOURS" type="text" class="form-control" id="input7" placeholder="Contact Number">
-  <div class="card-footer">
-            <div class="col-ms-6 float-bottom">
-              <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
-              &emsp;
-              &emsp;
-               <button type="button" id="close-button" class="btn btn-info">Save</button>
-              &emsp;
-              &emsp;
-             <button type="submit" id="close-button"  class="btn btn-info">Submit</button>
-            </div>
-          </div>  
-
-          
-            
-        </form>
+              <form action="{{route('viewTimesheet.store')}}"  id="timesheet" method="POST"  class="form-horizontal">
+                @csrf
+                <input type="hidden"  name="DATE" type="text" class="form-control" id="input1" placeholder="Contact Number">
+                <input type="hidden" name="CUSTOMER_NAME" type="text" class="form-control" id="input2" placeholder="Contact Number">
+                <input type="hidden"  name="PROJECT_NAME" type="text" class="form-control" id="input3" placeholder="Contact Number">
+                <input  type="hidden" name="PHASE" type="text" class="form-control" id="input4" placeholder="Contact Number">
+                <input type="hidden"  name="ACTIVITY" type="text" class="form-control" id="input5" placeholder="Contact Number">
+                <input   type="hidden" name="DESCRIPTION" type="text" class="form-control" id="input6" placeholder="Description" >
+                <input  type="hidden"  name="HOURS" type="text" class="form-control" id="input7" placeholder="Contact Number">
+                <input   type="hidden"  name="IS_SUBMITTED" type="text" class="form-control" value="1" id="input8" placeholder="Contact Number">
+                <input  type="hidden"  name="EMPLOYEE_ID" type="text" class="form-control" id="input9" placeholder="Contact Number">
+                <input  type="hidden"  name="EMPLOYEE_NAME" type="text" class="form-control" id="input0" placeholder="Contact Number">
+                <input  type="hidden"  name="RM_NAME" type="text" class="form-control" id="input11" placeholder="Contact Number">
+                  <div class="card-footer">
+                            <div class="col-ms-6 float-bottom">
+                              <button type="button" id="close-button" onclick="myFunction()" class="btn btn-info">New Entry</button>
+                              &emsp;
+                              &emsp;
+                              <button type="button" id="close-button" class="btn btn-info">Save</button>
+                              &emsp;
+                              &emsp;
+                            <button type="submit" id="close-button"  class="btn btn-info">Submit</button>
+                            </div>
+                    </div>  
+               </form>
     
 
 
@@ -614,11 +634,11 @@ function myFunction() {
   var cell6 = row.insertCell(6);
   var cell7 = row.insertCell(7);
   cell0.innerHTML = "<input type=\"date\" name=\"date\" id=\"date\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
-  cell1.innerHTML = "<select type=\"text\" name=\"customerName\" id=\"customerName\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>><option>Select Customer</option> @foreach($client as $item)<option> {{$item['CUSTOMER_FULL_NAME']}} </option>@endforeach</select> ";
+  cell1.innerHTML = "<select type=\"text\" name=\"customerName\" id=\"customerName\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>><option>Select Client</option> @foreach($client as $item)<option> {{$item['CUSTOMER_FULL_NAME']}} </option>@endforeach</select> ";
   cell2.innerHTML = "<select type=\"text\" name=\"projectName\" id=\"projectName\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Project</option> @foreach($project as $item)<option> {{$item['PROJECT_NAME']}} </option>@endforeach</select> ";
   cell3.innerHTML = "<select type=\"text\" name=\"phase\"  id=\"phase\" onChange=\"getEmail()\"style=\"width:100%;border:none\"/>><option>Select Phase</option><option> Project Preparation</option><option>Business Blueprint</option><option>Realization</option><option>Final Preparation</option><option>Go-Live</option><option>Hypercare Support</option><option>Training</option><option>Design</option><option>Discover</option><option>Landscape Transformation</option><option>Support</option><option>Organizational Activities</option><option>No Work</option></select> ";
   cell4.innerHTML = "<select type=\"text\" name=\"activity\"  id=\"activity\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>><option>Select Activity</option><option>Meeting</option><option>Development</option><option>Testing</option><option>Go-Live</option><option>Service Request</option><option>Incident</option><option>Change Request</option><option>Customer Visit</option><option>Training</option><option>Project Training</option><option>Absent</option></select> ";
-  cell5.innerHTML = "<input type=\"text\" name=\"Description\" id=\"Description\" onChange=\"getEmail()\" style=\"width:100%;border:none\"/>";
+  cell5.innerHTML = "<input type=\"text\" name=\"Description\" require id=\"Description\" onChange=\"getEmail()\" style=\"width:100%;border:none\"  />";
   cell6.innerHTML = "<input type=\"text\" name=\"hour\"  id=\"hour\" onChange=\"getEmail()\"  style=\"width:100%;border:none\"/>";
   cell7.innerHTML = "<button type=\"submit\" name=\"edit\"  style=\"width:100%;border:none\">Edit</button";
 

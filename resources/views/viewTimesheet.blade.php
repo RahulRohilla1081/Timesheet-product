@@ -50,6 +50,11 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+
+
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -297,9 +302,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>view Employee</p>
                 </a>
               </li>
         </ul>
@@ -410,12 +415,31 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h5 class="m-0 text-dark">View Timesheet</h5>
+            <h6 class="m-0 text-dark">View Timesheet</h6>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-             <li class="breadcrumb-item ">Rahul</li>
-              <li class="breadcrumb-item ">E123456789</li>
+             <li class="breadcrumb-item ">    
+               <div class="ml-3 relative">
+                    <x-jet-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            
+                            @else
+                                <span class="inline-flex rounded-md">
+                                    
+                                        {{ Auth::user()->name }}
+                                       / {{ Auth::user()->email }}
+                                  
+                                </span>
+                            @endif
+                        </x-slot>
+                        <x-slot name="content">
+                        </x-slot>
+                    </x-jet-dropdown>
+                </div>
+                </li>
+             
             </ol>
             
           </div><!-- /.col -->
@@ -458,21 +482,24 @@
              </div>
              <div class="col-3 ">
                    <!-- Employee Picker -->
-              <div class="input-group  ">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fas fa-user"></i>
-                      </span>
-                    </div>
-                     <select name="SCREEN_ID"  aria-controls="example1" class="form-control " >
-                          @foreach($employee as $item)
-                        <option value ="">{{$item['EMPLOYEE_NAME']}}  </option> 
-                         @endforeach 
-                      </select> 
+           <div class="form-group">
+        
+          <div class="search_select_box">
+            <select data-live-search="true" class="form-control"> 
+           
+              @foreach($employee as $item)
+            <option>   {{$item['EMP_FULLNAME']}}  </option>
+               @endforeach
+          </select>
+          </div>
+        </div>
                   </div>
                 </div>
                  <!-- Employee Picker -->
                 </div>
+
+
+                
                 
                 
             
@@ -748,7 +775,13 @@ DIALOG.addEventListener('cancel', function(e) {
   })
 </script>
 
-
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script>$(document).ready(function () {
+  $('.search_select_box select').selectpicker();
+});
+</script>
 
 
 

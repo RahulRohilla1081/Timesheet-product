@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Timesheet</title>
   <!-- Tell the browser to be responsive to screen width -->
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -26,6 +27,11 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
 
 
 <!-- table fix data-->
@@ -278,9 +284,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>view Employee</p>
                 </a>
               </li>
         </ul>
@@ -395,10 +401,13 @@
 
             
 <div class="card-header">
-  <h3 class="card-title">Add Project</h3>
+  <h6 class="card-title">Add Project</h6>
 </div>
 <!--/.card-header -->
 
+
+
+<div class="card">
 <div class="card-body">
    <form  action="{{route('project.store')}}" method="POST" class="form-horizontal" style="font-size:15px;">
                   @csrf
@@ -407,12 +416,24 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputEmail3" class="control-label">Project Name</label>
-            <input name="PROJECT_NAME" type="text" class="form-control" id="inputEmail3" placeholder="Project Name">
+            <input name="PROJECT_NAME" type="text" class="form-control" required id="inputEmail3" placeholder="Project Name">
           </div>
           <!-- /.form-group -->
           <div class="form-group">
             <label  for="inputEmail3" class="col-form-label">Client</label>
-            <input name="CLIENT_COMPANY" type="text" class="form-control" id="inputEmail3" placeholder="Client">
+           
+
+             <div class="search_select_box">
+         
+      
+
+        <select required name="CLIENT_COMPANY" data-live-search="true" class="form-control"> 
+            <option  disabled selected >Select Name</option>
+              @foreach($collection as $item)
+            <option>   {{$item['CUSTOMER_FULL_NAME']}}  </option>
+               @endforeach
+          </select>
+          </div>
           </div>
           <!-- /.form-group -->
         </div>
@@ -420,7 +441,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class=" control-label">Project Description</label>
-            <textarea name="PROJECT_DESCRIPTION"id="inputDescription" class="form-control" rows="5"></textarea>
+            <textarea name="PROJECT_DESCRIPTION"id="inputDescription" required class="form-control" rows="5"></textarea>
           </div>
           <!-- /.form-group -->
           
@@ -432,29 +453,30 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="inputEmail3" class="control-label">Estimated Budget</label>
-            <input name="EST_BUDGET" type="text" class="form-control" id="inputEmail3" placeholder="Estimated Budget ">
-          </div>
-          <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Estimated Duration(in days)</label>
-            <input name="PROJECT_DURATION" type="text" class="form-control" id="inputPassword3" placeholder="Estimated Duration">
-          </div>
-          <!-- /.form-group -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Amount Spent</label>
-            <input name="EST_AMT_SPEND" type="text" class="form-control" id="inputEmail3" placeholder="Amount Spent">
+            <input name="EST_BUDGET" type="text" class="form-control" id="inputEmail3" required placeholder="Estimated Budget ">
           </div>
           <!-- /.form-group -->
           <div class="form-group">
             <label id="inputPassword3" class=" col-form-label">Start Date </label>
             
             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                  <input name="START_DATE"type="date" class="form-control" placeholder="Estimated Budget">
+                  <input name="START_DATE"type="date" required class="form-control" placeholder="Estimated Budget">
                   
               </div>
+          </div>
+         
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="inputEmail3" class="control-label">Amount Spent</label>
+            <input name="EST_AMT_SPEND" type="text"  class="form-control" id="inputEmail3" placeholder="Amount Spent">
+          </div>
+          <!-- /.form-group -->
+           <div class="form-group">
+            <label for="inputEmail3" class="control-label">End Date </label>
+            <input  required name="END_DATE" type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
           </div>
           <!-- /.form-group -->
         </div>
@@ -463,32 +485,50 @@
       <!-- /.row -->
       <div class="row">
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">Project Leader</label>
-            <input name="PROJECT_LEADER" type="text" class="form-control" id="inputEmail3" placeholder="Project Leader">
+
+         <div class="form-group">
+          <label for="inputEmail3" class="control-label">Project Leader</label>
+          <div class="search_select_box">
+            <select required name="PROJECT_LEADER" data-live-search="true" class="form-control"> 
+            <option  disabled selected >Select Name</option>
+              @foreach($employee as $item)
+            <option>   {{$item['EMP_FULLNAME']}}  </option>
+               @endforeach
+          </select>
           </div>
+        </div>
+        
+
           <!-- /.form-group -->
-          <div class="form-group">
-            <label id="inputPassword3" class=" col-form-label">Employees</label>
-            <input name="" type="text" class="form-control" id="inputPassword3" placeholder="Employees">
+         <div class="form-group">
+          <label for="inputEmail3" class="control-label">Employee </label>
+          <div class="search_select_box">
+            <select required name="EMP_FULLNAME[]" id="EMP_FULLNAME" multiple data-live-search="true" class="form-control"> 
+             @foreach($employee as $item)
+            <option >   {{$item['EMP_FULLNAME']}}  </option>
+               @endforeach
+       </select>
           </div>
+        </div>
           <!-- /.form-group -->
         </div>
         <!-- /.col -->
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="inputEmail3" class="control-label">End Date </label>
-            <input name="END_DATE" type="date" class="form-control" id="inputEmail3" placeholder="Project Name">
+         
+
+           <div class="form-group">
+            <label id="inputPassword3" class=" col-form-label">Estimated Duration(in days)</label>
+            <input disabled name="PROJECT_DURATION" type="text" class="form-control" required id="inputPassword3" placeholder="Estimated Duration">
           </div>
           <!-- /.form-group -->
           <div class="form-group">
             <label id="inputPassword3" class=" col-form-label">Status</label>
-             <select  name="PROJECT_STATUS" aria-controls="example1" class="form-control" >
+             <select required  name="PROJECT_STATUS" aria-controls="example1" class="form-control" >
                         <option value="">Select Status </option>
-                         <option value="1" >On Hold</option>
-                         <option value="2">Cancelled</option>
-                         <option value="3">In Process</option>
-                         <option value="4">Not Started Yet</option>
+                         <option value="On Hold" >On Hold</option>
+                         <option value="Cancelled">Cancelled</option>
+                         <option value="In Process">In Process</option>
+                         <option value="Not Started Yet">Not Started Yet</option>
                       </select>
           </div>
           <!-- /.form-group -->
@@ -499,12 +539,13 @@
             <div class="col-ms-6 float-right">
               <button type="button" id="close-button" class="btn btn-danger">Cancel</button>
               &emsp;
-              <button type="submit" class="btn btn-success default float-right ">Create</button>
+              <button type="submit" class="btn btn-success default float-right">Create</button>
             </div>
           </div>        
       <!-- /.row -->
   </form>
   <!--/.form-->
+</div>
 </div>
 <!-- /.card-body-->
 
@@ -545,6 +586,7 @@
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -619,5 +661,24 @@ DIALOG.addEventListener('cancel', function(e) {
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script>
+
+$(document).ready(function () {
+  $('.search_select_box select').selectpicker();
+});
+
+</script>
+
+
+<script>
+function myFunction(){
+  var x=document.getElementById("EMP_FULLNAME").value;
+  document.getElementById("btninfo").value=x;
+
+}
+</script>
 </body>
 </html>

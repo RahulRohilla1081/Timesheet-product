@@ -51,7 +51,8 @@ Route::view('employeeWeeklyTimesheet','employee.employeeWeeklyTimesheet');
 
 
 Route::view('test','test');
-Route::view('userdata','userdata');
+Route::view('userdata','userdata');  
+Route::view('test','testtest');  
 
 
 
@@ -64,6 +65,7 @@ Route::apiResource("addEmployee", employeeController::class);
 Route::apiResource("project", projectController::class);
 Route::apiResource("addClient", addClientController::class);
 Route::apiResource("viewTimesheet", viewTimesheet::class);
+Route::apiResource("viewClient", viewClientController::class);
 Route::apiResource("employeeDailyTimesheet", employeeTimesheetController::class);
 
 
@@ -71,6 +73,10 @@ Route::get("createAuthorization",[createAuthorizationController::class,'index'])
 Route::get("createScreenref",[createScreenRefController::class,'index']);
 Route::get("createRole",[createRoleController::class,'index']);
 Route::get("addProjectScreen",[addProjectController::class,'index']);
+
+
+
+
 Route::get("project",[projectController::class,'index']);
 Route::get("viewEmployee",[viewEmployeeController::class,'index']);
 Route::get("viewClient",[viewClientController::class,'index']);

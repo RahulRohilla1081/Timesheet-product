@@ -274,9 +274,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>View Employee</p>
                 </a>
               </li>
         </ul>
@@ -400,7 +400,7 @@
 </div>
 
 <!--/.card-header -->
-
+<div class="card">
 <div class="card-body">
   <form action="{{route('addClient.store')}}"  id="quickForm" method="POST"  class="form-horizontal">
   @csrf
@@ -477,8 +477,8 @@
             <label for="inputEmail3" class="control-label">Project Manager</label>
            
              <select name="input123"  aria-controls="example1" id="input123" onChange="getEmail()" class="form-control" >
-                        <option  value="">Reporting Manager </option>
-                        @foreach($data as $item)
+                        <option  value="">Project Manager </option>
+                        @foreach($rmdetails as $item)
                         <option  value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > {{$item['EMP_FULLNAME']}}   </option>
 
                              @endforeach
@@ -495,8 +495,8 @@
            
 
                  <select DISABLED name="input1234"  aria-controls="" id="input1234" class="form-control" >
-                        <option  value="">RM Email </option>
-                        @foreach($data as $item)
+                        <option  value=""> Email ID</option>
+                        @foreach($rmdetails as $item)
                         <option value="{{$item['EMP_FULLNAME']}}_{{$item['EMPLOYEE_EMAIL']}}" > 
                         {{$item['EMPLOYEE_EMAIL']}}   </option>
                        
@@ -525,6 +525,7 @@
           </div> 
   </form>
   <!--/.form-->
+</div>
 </div>
 <!-- /.card-body-->
 

@@ -48,6 +48,10 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -295,9 +299,9 @@
             
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./addEmployee" class="nav-link ">
+                <a href="./viewEmployee" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>  
-                  <p>Add Employee</p>
+                  <p>View Employee</p>
                 </a>
               </li>
         </ul>
@@ -409,7 +413,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Project</h1>
+            <h5 class="m-0 text-dark">Add Project</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -431,13 +435,205 @@
 
 
  <div class="card">
+   @if(session('status'))
+          <div class="alert alert-success" role="alert">
+          {{session('status')}}
+        </div>
+        @endif
  <label>
                   <td>
                
-                      <button  onclick="window.location.href='./project';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create</button>
+                      <button  onclick="window.location.href='./project';"  type="button" id="fill-form-button"  style="margin-left:20px"   class="btn btn-info"><i class="ion-person-add"></i>Create Project</button>
                     </td>     
                     
                 </label>
+<!-- Allocation started -->
+                 <form   method="POST" class="form-horizontal" style="font-size:15px;">
+                  @csrf
+                 <div class="modal fade" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Large Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+             
+              <div class="row">
+             
+          <div class="col-12 col-sm-6 col-md-6">
+          
+              
+                  
+                  
+                      <input type="hidden"  disabled name="PROJ_NAME" class="form-control" id="PROJ_NAME" placeholder="Employee Name">
+
+
+                 <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Employee Name</label>
+                      <input type="text"  disabled name="ALLOC_EMP" class="form-control" id="ALLOC_EMP" placeholder="Employee Name">
+                  </div>
+                 
+             
+              <!-- /.info-box-content -->
+           
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+          
+             
+
+              <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Bench</label>
+                  
+                      <input disabled type="text"  name="ALLOC_PRCTG" class="form-control" id="ALLOC_PRCTG" placeholder="Bench">
+                  
+                  </div>
+              <!-- /.info-box-content -->
+           
+            <!-- /.info-box -->
+          </div>
+         
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+          <div class="col-12 col-sm-6 col-md-3" >
+         
+              
+          <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Allocation</label>
+                  
+                      <input type="number"  name="" class="form-control" id="" placeholder="Allocation">
+                  
+                  </div>
+           
+              <!-- /.info-box-content -->
+         
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+         
+          <!-- /.col -->
+        </div>
+             
+             
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-info">Update</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+</form>
+
+<!-- Allocation Ended -->
+
+
+
+
+    <!-- Editing project start-->
+                  <form  action= "{{route('addProjectScreen.store')}}" method="POST" class="form-horizontal" style="font-size:15px;">
+                  @csrf
+                 <div class="modal fade " id="editModel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+          <div class="card-header">
+                <h3 class="card-title">Update Project Data</h3>
+                  
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           
+
+             <input type="hidden"  name="PROJECT_NAME" class="form-control" id="PROJECT_NAME" placeholder="Name">
+             <input type="hidden"  name="PROJECT_DESCRIPTION" class="form-control" id="PROJECT_DESCRIPTION" placeholder="Name">
+             <input type="hidden"  name="CLIENT_COMPANY" class="form-control" id="CLIENT_COMPANY" placeholder="Name">      
+             <input type="hidden"  name="EST_BUDGET" class="form-control" id="EST_BUDGET" placeholder="Name">
+             <input type="hidden"  name="EST_AMT_SPEND" class="form-control" id="EST_AMT_SPEND" placeholder="Name">
+             <input type="hidden"  name="PROJECT_DURATION" class="form-control" id="PROJECT_DURATION" placeholder="Name">
+             <input type="hidden"  name="START_DATE" class="form-control" id="START_DATE" placeholder="Start Date">
+             <input type="hidden"  name="OVERDUE" class="form-control" id="OVERDUE" placeholder="Name">
+               <div class="card-body">
+              
+                   
+                   
+                      <input type="hidden"  name="PROJECT_ID" class="form-control" id="PROJECT_ID" placeholder="Name">
+                  
+                 
+                  <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Project Leader </label>
+                   
+                      
+                       <div class="search_select_box">
+            <select name="PROJECT_LEADER" id="PROJECT_LEADER"  data-live-search="true" class="form-control"> 
+             @foreach($employee as $item)
+            <option >{{$item['EMP_FULLNAME']}}  </option>
+               @endforeach
+       </select>
+          </div>
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">Employee Name</label>
+                   
+                     
+                       <div class="search_select_box">
+         
+            <select name="EMP_FULLNAME" id="EMP_FULLNAME" multiple data-live-search="true" class="form-control"> 
+           
+             @foreach($employee as $item)
+            <option >   {{$item['EMP_FULLNAME']}}  </option>
+               @endforeach
+       </select>
+          </div>
+                 
+                  </div>
+                   <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">End Name</label>
+                  
+                      <input type="date"  name="END_DATE" class="form-control" id="END_DATE" placeholder="End Date">
+                  
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class=" col-form-label">End Name</label>
+                  
+                    
+
+                       <select  name="PROJECT_STATUS" aria-controls="example1"id="PROJECT_STATUS"  class="form-control" >
+                        <option value="">Select Status </option>
+                         <option value="On Hold" >On Hold</option>
+                         <option value="Cancelled">Cancelled</option>
+                         <option value="In Process">In Process</option>
+                         <option value="Not Started Yet">Not Started Yet</option>
+                      </select>
+                   
+                  </div>
+                  </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-info ">Update</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+</form>
+
+<!--editing project ended -->
+  
  
               
               <!-- /.card-header -->
@@ -457,6 +653,9 @@
                       </th>
                       <th>
                           Project leader
+                      </th>
+                      <th>
+                          Employees
                       </th>
                       <th >
                           Estimated Budget
@@ -478,6 +677,9 @@
                       </th>
                       <th  >
                           Edit
+                      </th>
+                      <th  >
+                          Allocation
                       </th>
                      
                       <th >
@@ -521,6 +723,13 @@
                       </td>
                         <td class="project_progress">
                            <a>
+                              {{$item['EMP_FULLNAME']}} 
+                          </a>
+                          <br>
+                          
+                      </td>
+                        <td class="project_progress">
+                           <a>
                               {{$item['EST_BUDGET']}} 
                           </a>
                           <br>
@@ -558,13 +767,20 @@
                       </td>
                     
                       <td class="text-center">
-                         <button type="button" class="btn btn-warning">
-                         <i class="fas fa-edit" >
-                         </i>
-                         </button>
+                          <button type="button" id="btninfo" value= "{{$item['PROJECT_ID']}}_{{$item['PROJECT_LEADER']}}_{{$item['EMP_FULLNAME']}}_{{$item['PROJECT_STATUS']}}_{{$item['END_DATE']}}_{{$item['PROJECT_NAME']}}_{{$item['PROJECT_DESCRIPTION']}}_{{$item['CLIENT_COMPANY']}}_{{$item['EST_BUDGET']}}_{{$item['EST_AMT_SPEND']}}_{{$item['PROJECT_DURATION']}}_{{$item['START_DATE']}}_{{$item['OVERDUE']}}_"  class="btn btn-warning btninfo" data-toggle="modal" >
+                  <i class="fas fa-edit" >  </i>
+                </button>
+                
+                        
                       </td>
                        <td class="text-center">
-                          <span class="badge badge-success" >Activated</span>
+                         <button type="button" id="updatebtn" value= "{{$item['PROJECT_NAME']}} "   class="btn btn-info updatebtn" data-target="#modal-lg" data-toggle="modal" >
+              <span class="fas fa-clipboard"></span>
+                </button>
+               
+                      </td>
+                       <td class="text-center">
+                          <span class="badge badge-success"  > {{$item['PROJECT_STATUS']}} </span>
                       </td>
                          <!--------------Table ending---------->
                   </tr>
@@ -734,6 +950,113 @@ DIALOG.addEventListener('cancel', function(e) {
 </script>
 
 
+
+
+
+
+
+I<script>
+$(document).ready(function(){
+$(document).on('click','.btninfo',function(){
+
+    var project_id=$(this).val();
+
+    var MyArray = project_id.split('_');
+
+      document.getElementById("PROJECT_ID").value=MyArray[0];
+      console.log("id"+MyArray[0]);
+      document.getElementById("PROJECT_LEADER").value=MyArray[1];
+      console.log("leader"+MyArray[1]);
+      document.getElementById("EMP_FULLNAME").value=MyArray[2];
+      console.log("emp"+MyArray[2]);
+      document.getElementById("PROJECT_STATUS").value=MyArray[3];
+      console.log("status"+MyArray[3]);
+      document.getElementById("END_DATE").value=MyArray[4];
+      console.log("end"+MyArray[4]);
+      document.getElementById("PROJECT_NAME").value=MyArray[5];
+      console.log("project_name"+MyArray[5]);
+      document.getElementById("PROJECT_DESCRIPTION").value=MyArray[6];
+      console.log("description"+MyArray[6]);
+      document.getElementById("CLIENT_COMPANY").value=MyArray[7];
+      console.log("client"+MyArray[7]);
+      document.getElementById("EST_BUDGET").value=MyArray[8];
+      console.log("budget"+MyArray[8]);
+      document.getElementById("EST_AMT_SPEND").value=MyArray[9];
+      console.log("spend"+MyArray[9]);
+      document.getElementById("PROJECT_DURATION").value=MyArray[10];
+      document.getElementById("START_DATE").value=MyArray[11];
+      document.getElementById("OVERDUE").value=MyArray[12];
+  
+
+
+   
+    $('#editModel').modal('show');
+    
+ 
+
+});
+});
+
+</script>
+
+
+I<script>
+$(document).ready(function(){
+$(document).on('click','.updatebtn',function(){
+
+    var project_id=$(this).val();
+
+    var MyArray = project_id.split('_');
+
+    $('#modal-lg').modal('show');
+
+      document.getElementById("PROJ_NAME").value=MyArray[0];
+    console.log("id"+MyArray[0]);
+<!-- remove this if need-->
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost/timesheet_api/allocation/getEmpAlloc.php',
+        data: { _token: "{{ csrf_token() }}"  },
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        cache: false,
+        data: {
+          '_method': 'POST',
+          project_id:project_id
+        },
+        success: function (data) {
+            console.log(data);
+        },
+
+        error: function (msg) {
+
+            console.log("Error agya bhai");
+        }
+    });
+
+    <-- yha tk-->
+  
+
+      
+    
+ 
+
+});
+});
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<script>
+
+$(document).ready(function () {
+  $('.search_select_box select').selectpicker();
+});
+
+</script>
 
 
 </body>

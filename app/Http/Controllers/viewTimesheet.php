@@ -33,6 +33,10 @@ class viewTimesheet extends Controller
             $ACTIVITY=$request->get('ACTIVITY');
             $DESCRIPTION=$request->get('DESCRIPTION');
             $HOURS=$request->get('HOURS');
+            $IS_SUBMITTED=$request->get('IS_SUBMITTED');
+            $EMPLOYEE_ID=$request->get('EMPLOYEE_ID');
+            $EMPLOYEE_NAME=$request->get('EMPLOYEE_NAME');
+            $RM_NAME=$request->get('RM_NAME');
            
             $client=new Client([
                 "base_url"=>"http://localhost",
@@ -47,6 +51,10 @@ class viewTimesheet extends Controller
                     'ACTIVITY'=>$ACTIVITY,
                     'DESCRIPTION'=>$DESCRIPTION,
                     'HOURS'=>$HOURS,
+                    'IS_SUBMITTED'=>$IS_SUBMITTED,
+                    'EMPLOYEE_ID'=>$EMPLOYEE_ID,
+                    'EMPLOYEE_NAME'=>$EMPLOYEE_NAME,
+                    'RM_NAME'=>$RM_NAME
 
 
                 ]
